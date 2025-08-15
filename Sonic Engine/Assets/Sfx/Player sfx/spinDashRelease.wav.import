@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bkw670vb6mf7r"
+path="res://.godot/imported/spinDashRelease.wav-fb33ac7b889cd290323094dce44328e6.sample"
+
+[deps]
+
+source_file="res://Assets/Sfx/Player sfx/spinDashRelease.wav"
+dest_files=["res://.godot/imported/spinDashRelease.wav-fb33ac7b889cd290323094dce44328e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

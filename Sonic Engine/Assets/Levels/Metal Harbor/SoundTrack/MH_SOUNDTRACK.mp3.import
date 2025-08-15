@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://txwi0d15uhi"
+path="res://.godot/imported/MH_SOUNDTRACK.mp3-19cf2f11b88ed2dc171574154562f3ac.mp3str"
+
+[deps]
+
+source_file="res://Assets/Levels/Metal Harbor/SoundTrack/MH_SOUNDTRACK.mp3"
+dest_files=["res://.godot/imported/MH_SOUNDTRACK.mp3-19cf2f11b88ed2dc171574154562f3ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

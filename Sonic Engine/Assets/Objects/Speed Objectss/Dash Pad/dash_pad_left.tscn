@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciug36es2fm7v"]
+
+[ext_resource type="Script" uid="uid://0ff7j7jisngm" path="res://Assets/Objects/Speed Objectss/Dash Pad/dash_pad_left.gd" id="1_kaiue"]
+[ext_resource type="SpriteFrames" uid="uid://bl28txcartgg3" path="res://Assets/Objects/Speed Objectss/SpeedObjects.tres" id="2_mx4gi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6601"]
+size = Vector2(46, 15)
+
+[node name="Dash_Pad" type="Node2D"]
+script = ExtResource("1_kaiue")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_mx4gi")
+animation = &"Dash_Pad"
+autoplay = "Dash_Pad"
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_s6601")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 12)
+target_position = Vector2(-31, 0)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

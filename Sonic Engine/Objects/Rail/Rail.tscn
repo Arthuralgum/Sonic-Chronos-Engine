@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd5gtw427b3iv"]
+
+[ext_resource type="Script" uid="uid://c2slsst0tb0jk" path="res://Objects/Rail/rail_script.gd" id="1_efp8r"]
+[ext_resource type="Script" uid="uid://bvavyog0uspvi" path="res://Objects/Rail/rail_follow_script.gd" id="1_mf51k"]
+[ext_resource type="Texture2D" uid="uid://dw7bo3lf3npfp" path="res://Assets/System/Homing Attack sprite.png" id="2_efp8r"]
+
+[sub_resource type="Curve2D" id="Curve2D_efp8r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -14759, -1813, 0, 0, 0, 0, -14733, -1813, -32.2879, -4.34645, 32.2879, 4.34645, -14668, -1810, -2.48369, -23.595, 2.48369, 23.595, -14598, -1743, 0, 0, 0, 0, -14596, -1711, 0, 0, 0, 0, -14595, -1369, -0.454545, -30.9091, 0.454545, 30.9091, -14598, -1238, -27.7273, -3.18182, 27.7273, 3.18182, -14523, -1164, 0, 0, 0, 0, -13354, -1163, -5.83134, 49.2165, 5.83134, -49.2165, -13289, -1231, -11.3278, -0.021266, 11.3278, 0.021266, -13215, -1304, 0, 0, 0, 0, -13187, -1304)
+}
+point_count = 12
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mf51k"]
+radius = 16.0098
+height = 68.0094
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_efp8r"]
+radius = 51.0098
+
+[node name="Rail" type="Path2D"]
+position = Vector2(9345, 1740)
+curve = SubResource("Curve2D_efp8r")
+script = ExtResource("1_efp8r")
+
+[node name="RailFollow" type="PathFollow2D" parent="."]
+position = Vector2(-14759, -1813)
+loop = false
+script = ExtResource("1_mf51k")
+rail_speed = 20.0
+
+[node name="AimSprite" type="Sprite2D" parent="RailFollow"]
+position = Vector2(0.999914, 0.0050087)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_efp8r")
+region_enabled = true
+region_rect = Rect2(359, 0, 361, 360)
+
+[node name="activate_rail" type="Area2D" parent="RailFollow"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RailFollow/activate_rail"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mf51k")
+
+[node name="HomingAttck" type="Area2D" parent="RailFollow"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RailFollow/HomingAttck"]
+shape = SubResource("CircleShape2D_efp8r")
+
+[node name="RailRemote" type="RemoteTransform2D" parent="RailFollow"]
+
+[connection signal="body_entered" from="RailFollow/activate_rail" to="RailFollow" method="_on_activate_rail_body_entered"]
+[connection signal="body_entered" from="RailFollow/HomingAttck" to="RailFollow" method="_on_homing_attck_body_entered"]
+[connection signal="body_exited" from="RailFollow/HomingAttck" to="RailFollow" method="_on_homing_attck_body_exited"]

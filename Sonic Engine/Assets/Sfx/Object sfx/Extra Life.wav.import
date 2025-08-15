@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1uy75rapl40a"
+path="res://.godot/imported/Extra Life.wav-7aad38d0087ca7209e9e5e586b0fca45.sample"
+
+[deps]
+
+source_file="res://Assets/Sfx/Object sfx/Extra Life.wav"
+dest_files=["res://.godot/imported/Extra Life.wav-7aad38d0087ca7209e9e5e586b0fca45.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

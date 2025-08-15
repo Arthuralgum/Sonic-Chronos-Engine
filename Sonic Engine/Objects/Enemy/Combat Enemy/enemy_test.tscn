@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl85r33evh8yh"]
+
+[ext_resource type="Script" uid="uid://bkm4sg5s6w10" path="res://Objects/Enemy/Combat Enemy/combat_enemy_test.gd" id="1_c6iok"]
+[ext_resource type="Texture2D" uid="uid://ck1rfn0o7qblx" path="res://Assets/Player/Shadow sprites/Shadow Sprites.png" id="2_5det1"]
+[ext_resource type="Script" uid="uid://c6lo4ahxwgao" path="res://System/Hurtbox.gd" id="3_o0qgm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4pgat"]
+radius = 13.7723
+height = 42.0476
+
+[node name="EnemyTest" type="Node2D"]
+script = ExtResource("1_c6iok")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5det1")
+region_enabled = true
+region_rect = Rect2(895.735, 863.578, 27.7506, 38.9534)
+
+[node name="HurtBox" type="Area2D" parent="."]
+position = Vector2(2, 18)
+script = ExtResource("3_o0qgm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1.77225, -18.0238)
+shape = SubResource("CapsuleShape2D_4pgat")
+
+[connection signal="area_entered" from="HurtBox" to="HurtBox" method="_on_area_entered"]

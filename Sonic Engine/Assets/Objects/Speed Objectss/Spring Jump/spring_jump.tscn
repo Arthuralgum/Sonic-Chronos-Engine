@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://cntx067epfcq"]
+
+[ext_resource type="Script" uid="uid://b0ggyurs6ro2p" path="res://Assets/Objects/Speed Objectss/Spring Jump/SpringJump.gd" id="2_djngm"]
+[ext_resource type="SpriteFrames" uid="uid://bl28txcartgg3" path="res://Assets/Objects/Speed Objectss/SpeedObjects.tres" id="2_lfywj"]
+[ext_resource type="Texture2D" uid="uid://dw7bo3lf3npfp" path="res://Assets/System/Homing Attack sprite.png" id="3_djngm"]
+[ext_resource type="AudioStream" uid="uid://4gntoyaioh4b" path="res://Assets/Sfx/Object sfx/sonic-spring.mp3" id="4_hmmy0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djngm"]
+size = Vector2(251.667, 154.5)
+
+[node name="Spring Jump" type="Node2D"]
+scale = Vector2(1.2, 1.2)
+script = ExtResource("2_djngm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 0.833333)
+scale = Vector2(1.2, 1.2)
+sprite_frames = ExtResource("2_lfywj")
+animation = &"Spring"
+frame = 8
+frame_progress = 1.0
+
+[node name="Detection Area" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -13)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatedSprite2D/Detection Area"]
+position = Vector2(0, -10.6111)
+polygon = PackedVector2Array(-15, 24.6667, -17.5, 24.6667, -17, 3, 17, 3, 17.5, 24.6667, 15, 24.6667)
+
+[node name="CollisionBox" type="StaticBody2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 1)
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatedSprite2D/CollisionBox"]
+position = Vector2(0, 1.77778)
+scale = Vector2(1, 0.901786)
+polygon = PackedVector2Array(-8.33333, 12.3212, 8.33333, 12.3212, 8.33333, 17.7118, -8.33333, 17.7118)
+
+[node name="Polygon2D" type="Polygon2D" parent="AnimatedSprite2D/CollisionBox"]
+visible = false
+color = Color(0.741176, 0.0980392, 0.0784314, 1)
+polygon = PackedVector2Array(-8.33333, 12.3212, 8.33333, 12.3212, 8.33333, 20.5278, -8.33333, 20.5278)
+
+[node name="CanHomingAttack Area" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/CanHomingAttack Area"]
+position = Vector2(-0.833332, -70.25)
+shape = SubResource("RectangleShape2D_djngm")
+
+[node name="Aim" type="Sprite2D" parent="."]
+position = Vector2(0, -22.5)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_djngm")
+region_enabled = true
+region_rect = Rect2(361, -294.952, 359, 654.952)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hmmy0")
+volume_db = 10.0
+
+[connection signal="body_entered" from="AnimatedSprite2D/Detection Area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/Detection Area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="AnimatedSprite2D/CanHomingAttack Area" to="." method="_on_can_homing_attack_area_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/CanHomingAttack Area" to="." method="_on_can_homing_attack_area_body_exited"]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://2x62epef502n"]
+
+[ext_resource type="Script" uid="uid://komrquk6h2p1" path="res://Assets/Objects/Speed Objectss/Boost Ring/boost_ring.gd" id="1_pdhvn"]
+[ext_resource type="Texture2D" uid="uid://d7t48vvdkioa" path="res://Assets/Objects/Speed Objectss/Speed Objects.png" id="2_e1n84"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdhvn"]
+radius = 22.0
+height = 86.0
+
+[node name="Boost ring" type="Node2D"]
+script = ExtResource("1_pdhvn")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_pdhvn")
+
+[node name="Direction" type="RayCast2D" parent="."]
+target_position = Vector2(50, 0)
+
+[node name="Horizontal Z1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-14, 0)
+texture = ExtResource("2_e1n84")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(143.526, 432.729, 26.2383, 92.3625)
+
+[node name="Horizontal Z0" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(12, 0)
+texture = ExtResource("2_e1n84")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(116.116, 432.729, 28.6148, 92.3625)
+
+[node name="Diagonal_up" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_e1n84")
+region_enabled = true
+region_rect = Rect2(175.019, 432.341, 88.17, 88.6365)
+
+[node name="Diagonal_down" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, 0)
+texture = ExtResource("2_e1n84")
+region_enabled = true
+region_rect = Rect2(178.546, 317.364, 78.6364, 95.0001)
+
+[node name="Vertical" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_e1n84")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0.0797653, 322.642, 97.6541, 57.5764)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

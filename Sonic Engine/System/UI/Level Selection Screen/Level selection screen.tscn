@@ -1,0 +1,307 @@
+[gd_scene load_steps=19 format=3 uid="uid://doejuhkeem6qa"]
+
+[ext_resource type="Texture2D" uid="uid://dianfgf4c6w6" path="res://Assets/System/Sonic Chronos Engine.png" id="1_6wa0t"]
+[ext_resource type="Script" uid="uid://bbj6ljloj0xfi" path="res://System/UI/Level Selection Screen/level_selection_screen.gd" id="1_fn703"]
+[ext_resource type="FontFile" uid="uid://bipbksms2o5x7" path="res://Assets/System/Fonts/Obised.ttf" id="2_51xem"]
+[ext_resource type="Texture2D" uid="uid://cxe77glasnu42" path="res://Assets/System/UI/Character Selection Screen/A button.png" id="3_51xem"]
+[ext_resource type="Texture2D" uid="uid://c726b5nnmxlpe" path="res://Assets/Levels/Test Level/Test Level Thumb.png" id="3_qakp0"]
+[ext_resource type="Texture2D" uid="uid://s4qqd8cqfcmg" path="res://Assets/Levels/Metal Harbor/MH thumb.png" id="3_tpmjd"]
+[ext_resource type="FontFile" uid="uid://b8qirfs8s4325" path="res://Assets/System/Fonts/Ultra Force.otf" id="3_xo2xt"]
+[ext_resource type="Script" uid="uid://brl1kr0ck7wr3" path="res://System/UI/Level Selection Screen/level_slot.gd" id="4_uylql"]
+[ext_resource type="Texture2D" uid="uid://cqclyeovibdye" path="res://Assets/System/UI/Level Selection Screen/More Soon.png" id="5_xo2xt"]
+[ext_resource type="AudioStream" uid="uid://cs5d1qujil450" path="res://Assets/System/UI/Level Selection Screen/MH_menu.wav" id="8_y6eb5"]
+[ext_resource type="AudioStream" uid="uid://b6y8wpglu4bd8" path="res://Assets/System/UI/Level Selection Screen/Menu Arrow.wav" id="9_7bo41"]
+[ext_resource type="PackedScene" uid="uid://dccxq1kjmbwcp" path="res://System/UI/Fade_transition.tscn" id="10_2vlbf"]
+[ext_resource type="AudioStream" uid="uid://jk6eaamvkbix" path="res://Assets/System/UI/Level Selection Screen/Menu Select.wav" id="11_ne1as"]
+[ext_resource type="AudioStream" uid="uid://b0fxfgde55wni" path="res://Assets/System/UI/Level Selection Screen/Menu Exit.wav" id="12_3vhm7"]
+[ext_resource type="PackedScene" uid="uid://d1p138h61rg6j" path="res://System/preset_selection_screen.tscn" id="14_niqaf"]
+[ext_resource type="Texture2D" uid="uid://6s1sa12muew8" path="res://Assets/System/UI/Options(Normal).png" id="15_4yrmm"]
+[ext_resource type="Texture2D" uid="uid://c4jniavs7l51h" path="res://Assets/System/UI/Options(Pressedl).png" id="16_e7h0k"]
+[ext_resource type="Texture2D" uid="uid://bqbk3j0mmcpya" path="res://Assets/System/UI/Options.png" id="17_t0ns0"]
+
+[node name="Level Selection Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fn703")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.04, 0.04, 0.819608)
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 560.0
+offset_right = 1651.0
+offset_bottom = 960.0
+scale = Vector2(0.319627, 0.319627)
+texture = ExtResource("1_6wa0t")
+
+[node name="LevelSlot1" type="MarginContainer" parent="." node_paths=PackedStringArray("level_slot_sprite", "level_label")]
+layout_mode = 2
+offset_left = 148.0
+offset_top = 76.0
+offset_right = 429.0
+offset_bottom = 76.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_bottom = 75
+script = ExtResource("4_uylql")
+level_path = "res://Levels/Test level/test_level.tscn"
+level_slot_sprite = NodePath("Test Level")
+level_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="LevelSlot1"]
+modulate = Color(1, 1, 1, 0.298039)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.921569, 0.870588, 0, 1)
+theme_override_colors/font_outline_color = Color(0.1125, 0.356875, 0.75, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 50
+text = "TEST LEVEL"
+
+[node name="Test Level" type="Sprite2D" parent="LevelSlot1"]
+modulate = Color(1, 1, 1, 0.298039)
+position = Vector2(125, 236)
+scale = Vector2(0.15, 0.168)
+texture = ExtResource("3_qakp0")
+region_enabled = true
+region_rect = Rect2(-2.893, -0.192, 1352.7, 1853.69)
+
+[node name="LevelSlot2" type="MarginContainer" parent="." node_paths=PackedStringArray("level_slot_sprite", "level_label", "level_audio")]
+layout_mode = 2
+offset_left = 520.0
+offset_top = 253.0
+offset_right = 710.0
+offset_bottom = 253.0
+size_flags_horizontal = 4
+theme_override_constants/margin_left = -15
+theme_override_constants/margin_top = -220
+theme_override_constants/margin_right = -50
+script = ExtResource("4_uylql")
+level_path = "res://Levels/Metal Harbor/MH V1.tscn"
+level_slot_sprite = NodePath("Metal Habor")
+level_label = NodePath("Label")
+level_audio = NodePath("Level_audio")
+
+[node name="Label" type="Label" parent="LevelSlot2"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.75, 0.364875, 0.1575, 1)
+theme_override_colors/font_outline_color = Color(0.1125, 0.356875, 0.75, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("3_xo2xt")
+theme_override_font_sizes/font_size = 60
+text = "METAL HARBOR"
+
+[node name="Metal Habor" type="Sprite2D" parent="LevelSlot2"]
+position = Vector2(127, 80)
+scale = Vector2(0.15, 0.168)
+texture = ExtResource("3_tpmjd")
+region_enabled = true
+region_rect = Rect2(935.75, 0, 1352.71, 1858)
+
+[node name="Right Arrow Up" type="Polygon2D" parent="LevelSlot2"]
+unique_name_in_owner = true
+position = Vector2(118, -14)
+scale = Vector2(3, 3)
+color = Color(0.84, 0.84, 0.84, 1)
+antialiased = true
+polygon = PackedVector2Array(54, 29, 45, 22, 50, 29)
+
+[node name="Right Arrow Down" type="Polygon2D" parent="LevelSlot2"]
+unique_name_in_owner = true
+position = Vector2(118, -14)
+scale = Vector2(3, 3)
+color = Color(0.5874, 0.60434, 0.66, 1)
+antialiased = true
+polygon = PackedVector2Array(45, 35, 54, 29, 50, 29)
+
+[node name="Left Arrow Up" type="Polygon2D" parent="LevelSlot2"]
+unique_name_in_owner = true
+position = Vector2(136, 157)
+rotation = 3.14159
+scale = Vector2(3, 3)
+color = Color(0.839216, 0.839216, 0.839216, 1)
+antialiased = true
+polygon = PackedVector2Array(45, 34, 54, 28, 50, 28)
+
+[node name="Left Arrow Down" type="Polygon2D" parent="LevelSlot2"]
+unique_name_in_owner = true
+position = Vector2(136, 157)
+rotation = 3.14159
+scale = Vector2(3, 3)
+color = Color(0.584314, 0.603922, 0.658824, 1)
+antialiased = true
+polygon = PackedVector2Array(54, 28, 45, 21, 50, 28)
+
+[node name="Level_audio" type="AudioStreamPlayer" parent="LevelSlot2"]
+stream = ExtResource("8_y6eb5")
+volume_db = -20.0
+
+[node name="Menu Arrow" type="AudioStreamPlayer" parent="LevelSlot2"]
+stream = ExtResource("9_7bo41")
+volume_db = -20.0
+
+[node name="Soon" type="MarginContainer" parent="." node_paths=PackedStringArray("level_slot_sprite", "level_label")]
+layout_mode = 2
+offset_left = 617.0
+offset_top = 253.0
+offset_right = 661.0
+offset_bottom = 253.0
+theme_override_constants/margin_left = 170
+theme_override_constants/margin_top = -235
+theme_override_constants/margin_right = -360
+theme_override_constants/margin_bottom = 75
+script = ExtResource("4_uylql")
+level_path = "res://System/UI/Level Selection Screen/Level selection screen.tscn"
+level_slot_sprite = NodePath("Soon")
+level_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Soon"]
+modulate = Color(1, 1, 1, 0.298039)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.1908, 0.2331, 0.36, 1)
+theme_override_colors/font_outline_color = Color(0.592, 0.631467, 0.74, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 7
+theme_override_font_sizes/font_size = 55
+text = "  SOON..."
+
+[node name="Soon" type="Sprite2D" parent="Soon"]
+modulate = Color(1, 1, 1, 0.298039)
+position = Vector2(297, 27)
+scale = Vector2(0.15, 0.168)
+texture = ExtResource("5_xo2xt")
+region_enabled = true
+region_rect = Rect2(-0.0309219, -0.160527, 1352.46, 1859.49)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 175
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_top = 50
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_51xem")
+theme_override_font_sizes/font_size = 50
+text = "SELECT THE LEVEL:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 265
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "    Next"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 525
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_51xem")
+stretch_mode = 2
+
+[node name="Menu Select" type="AudioStreamPlayer" parent="VBoxContainer/MarginContainer2"]
+stream = ExtResource("11_ne1as")
+volume_db = -20.0
+
+[node name="Menu Exit" type="AudioStreamPlayer" parent="VBoxContainer/MarginContainer2"]
+stream = ExtResource("12_3vhm7")
+volume_db = -10.0
+
+[node name="Slot0_Marker" type="Marker2D" parent="."]
+position = Vector2(-172, 281)
+
+[node name="Slot1_Marker" type="Marker2D" parent="."]
+position = Vector2(273, 311)
+
+[node name="Slot2_Marker" type="Marker2D" parent="."]
+position = Vector2(649, 333)
+
+[node name="Slot3_Marker" type="Marker2D" parent="."]
+position = Vector2(1018, 311)
+
+[node name="Slot4_Marker" type="Marker2D" parent="."]
+position = Vector2(1573, 281)
+
+[node name="Slot0_Marker_Label" type="Marker2D" parent="."]
+position = Vector2(-297, 46)
+
+[node name="Slot1_Marker_Label" type="Marker2D" parent="."]
+position = Vector2(148, 76)
+
+[node name="Slot2_Marker_Label" type="Marker2D" parent="."]
+position = Vector2(507, 111)
+
+[node name="Slot3_Marker_Label" type="Marker2D" parent="."]
+position = Vector2(886, 72)
+
+[node name="Slot4_Marker_Label" type="Marker2D" parent="."]
+position = Vector2(1441, 42)
+
+[node name="Preset Selection Screen" parent="." instance=ExtResource("14_niqaf")]
+visible = false
+layout_mode = 1
+
+[node name="Confirm2" type="TextureButton" parent="Preset Selection Screen"]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 520.0
+offset_right = 889.0
+offset_bottom = 584.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("15_4yrmm")
+texture_pressed = ExtResource("16_e7h0k")
+texture_hover = ExtResource("17_t0ns0")
+
+[node name="Label" type="Label" parent="Preset Selection Screen/Confirm2"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 21.0
+offset_right = 263.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("2_51xem")
+theme_override_font_sizes/font_size = 32
+text = "Confirm"
+horizontal_alignment = 1
+
+[node name="Fade_effect" parent="." instance=ExtResource("10_2vlbf")]
+visible = false
+layout_mode = 1
+mouse_filter = 2
+
+[node name="Fade_timer" type="Timer" parent="Fade_effect"]
+wait_time = 0.5
+
+[connection signal="pressed" from="Preset Selection Screen/Confirm2" to="." method="_on_confirm_2_pressed"]
+[connection signal="timeout" from="Fade_effect/Fade_timer" to="." method="_on_fade_timer_timeout"]

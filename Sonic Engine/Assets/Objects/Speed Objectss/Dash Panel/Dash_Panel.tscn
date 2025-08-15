@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://hcj4og723t10"]
+
+[ext_resource type="SpriteFrames" uid="uid://bl28txcartgg3" path="res://Assets/Objects/Speed Objectss/SpeedObjects.tres" id="1_50mur"]
+[ext_resource type="Script" uid="uid://ckqps3rpjcwso" path="res://Assets/Objects/Speed Objectss/Dash Panel/dash_panel.gd" id="1_gnrco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnrco"]
+size = Vector2(33, 41.5)
+
+[node name="DashPanel" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_gnrco")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_50mur")
+animation = &"Dash Panel"
+autoplay = "Dash Panel"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -4.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 10.25)
+shape = SubResource("RectangleShape2D_gnrco")
+
+[node name="Direction" type="RayCast2D" parent="."]
+target_position = Vector2(0, -27)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

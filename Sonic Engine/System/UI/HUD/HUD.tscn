@@ -1,0 +1,185 @@
+[gd_scene load_steps=16 format=3 uid="uid://bi057xthrt4t4"]
+
+[ext_resource type="FontFile" uid="uid://dcx66fsva2smj" path="res://Assets/System/Fonts/Font.ttf" id="1_psx4k"]
+[ext_resource type="Script" uid="uid://dcmjf8b1vgaix" path="res://System/UI/HUD/HUD.gd" id="1_x0rb0"]
+[ext_resource type="Script" uid="uid://cbg1t41xxtj0d" path="res://System/UI/HUD/Time_Count.gd" id="2_3e614"]
+[ext_resource type="Texture2D" uid="uid://mbeajwaoqn0w" path="res://Assets/System/UI/HUD/Energy Bar.png" id="3_m8e2p"]
+[ext_resource type="Texture2D" uid="uid://bmfeoqs863iws" path="res://Assets/System/UI/HUD/Energy Bar (progress).png" id="4_33qtk"]
+[ext_resource type="Script" uid="uid://bjcnpbuoe03k5" path="res://System/UI/HUD/Energy_bar.gd" id="5_hdtop"]
+[ext_resource type="Texture2D" uid="uid://nq3a2m16nygr" path="res://Assets/System/UI/HUD/Energy Bar (Full).png" id="6_jx0fh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x0rb0"]
+font = ExtResource("1_psx4k")
+font_size = 25
+font_color = Color(0.95, 0.855, 0, 1)
+outline_size = 8
+outline_color = Color(0.188235, 0.313726, 0.658824, 1)
+shadow_size = 10
+shadow_color = Color(0.156863, 0.219608, 0.596078, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2exbs"]
+atlas = ExtResource("3_m8e2p")
+region = Rect2(0, 0, 400, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8e2p"]
+atlas = ExtResource("6_jx0fh")
+region = Rect2(0, 0, 400, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33qtk"]
+atlas = ExtResource("6_jx0fh")
+region = Rect2(400, 0, 400, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdtop"]
+atlas = ExtResource("6_jx0fh")
+region = Rect2(800, 0, 400, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx0fh"]
+atlas = ExtResource("6_jx0fh")
+region = Rect2(0, 140, 400, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e614"]
+atlas = ExtResource("6_jx0fh")
+region = Rect2(400, 140, 400, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2exbs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2exbs")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8e2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33qtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdtop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx0fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e614")
+}],
+"loop": true,
+"name": &"Full",
+"speed": 15.0
+}]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x0rb0")
+
+[node name="Time" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 35.0
+offset_right = 146.0
+offset_bottom = 35.0
+script = ExtResource("2_3e614")
+
+[node name="TIME(ms)" type="Label" parent="Time"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.28
+anchor_bottom = 0.185
+offset_left = 9.0
+offset_right = 57.0
+offset_bottom = 102.0
+focus_neighbor_left = NodePath(".")
+text = "000
+
+"
+label_settings = SubResource("LabelSettings_x0rb0")
+
+[node name="TIME(s)" type="Label" parent="Time"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.28
+anchor_bottom = 0.185
+offset_left = -39.0
+offset_right = -7.0
+offset_bottom = 67.0
+focus_neighbor_left = NodePath(".")
+text = "00
+"
+label_settings = SubResource("LabelSettings_x0rb0")
+
+[node name="TIME(m)" type="Label" parent="Time"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.28
+anchor_bottom = 0.185
+offset_left = -146.0
+offset_right = -62.2
+offset_bottom = 94.6
+focus_neighbor_left = NodePath(".")
+text = "TIME 00
+
+"
+label_settings = SubResource("LabelSettings_x0rb0")
+
+[node name="SCORE" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.28
+anchor_bottom = 0.185
+offset_right = 0.600006
+offset_bottom = -0.199997
+focus_neighbor_left = NodePath(".")
+text = "SCORE (Score)
+"
+label_settings = SubResource("LabelSettings_x0rb0")
+
+[node name="RINGS" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.28
+anchor_bottom = 0.185
+offset_top = 66.0
+offset_right = 0.600006
+offset_bottom = 65.8
+focus_neighbor_left = NodePath(".")
+text = "RINGS (ring)
+"
+label_settings = SubResource("LabelSettings_x0rb0")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -34.0
+offset_top = 572.0
+offset_right = 366.0
+offset_bottom = 712.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer2"]
+layout_mode = 2
+max_value = 50.0
+texture_progress = ExtResource("4_33qtk")
+script = ExtResource("5_hdtop")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18
+anchor_bottom = 0.181
+offset_right = -68.4
+offset_bottom = -17.32
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Energy_Bar(Full)" type="AnimatedSprite2D" parent="MarginContainer"]
+position = Vector2(200, 651)
+sprite_frames = SubResource("SpriteFrames_2exbs")
+animation = &"Full"
+autoplay = "Default"

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmm0dmfhu7sbm"]
+
+[ext_resource type="Script" uid="uid://cof43gdkl8byr" path="res://Objects/Light Speed Dash/dash_follow.gd" id="1_rnsiv"]
+[ext_resource type="Texture2D" uid="uid://dw7bo3lf3npfp" path="res://Assets/System/Homing Attack sprite.png" id="2_royfu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rnsiv"]
+radius = 76.0
+height = 312.0
+
+[node name="DashFollow2D" type="PathFollow2D"]
+position = Vector2(-5629, 893)
+rotation = -0.0381171
+loop = false
+script = ExtResource("1_rnsiv")
+rail_speed = 50.0
+
+[node name="AimSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.999914, 0.0050087)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_royfu")
+region_enabled = true
+region_rect = Rect2(359, 0, 361, 360)
+
+[node name="activate_rail" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="activate_rail"]
+shape = SubResource("CapsuleShape2D_rnsiv")
+
+[node name="RailRemote" type="RemoteTransform2D" parent="."]
+
+[connection signal="body_entered" from="activate_rail" to="." method="_on_activate_dash_body_entered"]
+[connection signal="body_exited" from="activate_rail" to="." method="_on_activate_dash_body_exited"]

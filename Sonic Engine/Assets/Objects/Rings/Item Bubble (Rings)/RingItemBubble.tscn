@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5g8whnk3l4pb"]
+
+[ext_resource type="Script" uid="uid://dhkrpgt57fctb" path="res://Assets/Objects/Rings/Item Bubble (Rings)/RingItemBubble.gd" id="1_nbtd5"]
+[ext_resource type="Texture2D" uid="uid://d1gil67wu66lw" path="res://Assets/Objects/Rings/Item Bubble (Rings)/ItemBubblesSprite.png" id="2_bqf83"]
+[ext_resource type="Texture2D" uid="uid://dw7bo3lf3npfp" path="res://Assets/System/Homing Attack sprite.png" id="3_64dc1"]
+[ext_resource type="AudioStream" uid="uid://dpws5wacnjntd" path="res://Assets/Sfx/Object sfx/Item Bubble.ogg" id="4_hhmh7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rtdl4"]
+radius = 21.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvhv8"]
+radius = 127.012
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nbtd5")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+position = Vector2(2, 2)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("2_bqf83")
+region_enabled = true
+region_rect = Rect2(97.8244, 35.557, 24.6939, 36.443)
+
+[node name="CollisionArea" type="Area2D" parent="."]
+
+[node name="HitBox Area" type="CollisionShape2D" parent="CollisionArea"]
+shape = SubResource("CircleShape2D_rtdl4")
+
+[node name="CanHomingAttackArea" type="Area2D" parent="."]
+
+[node name="Homing Attack Area" type="CollisionShape2D" parent="CanHomingAttackArea"]
+shape = SubResource("CircleShape2D_uvhv8")
+
+[node name="Aim" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_64dc1")
+region_enabled = true
+region_rect = Rect2(361, 0, 359, 360)
+
+[node name="Sound Effect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hhmh7")
+
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]
+[connection signal="body_entered" from="CanHomingAttackArea" to="." method="_on_can_homing_attack_area_body_entered"]
+[connection signal="body_exited" from="CanHomingAttackArea" to="." method="_on_can_homing_attack_area_body_exited"]

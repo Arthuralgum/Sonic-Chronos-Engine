@@ -1,0 +1,1215 @@
+[gd_scene load_steps=14 format=3 uid="uid://cb4ol40y8c3rs"]
+
+[ext_resource type="FontFile" uid="uid://bipbksms2o5x7" path="res://Assets/System/Fonts/Obised.ttf" id="1_6rg0q"]
+[ext_resource type="Script" uid="uid://wjoqikjjnilf" path="res://System/UI/Setting Menu/settings_tab.gd" id="1_a1iti"]
+[ext_resource type="Texture2D" uid="uid://6s1sa12muew8" path="res://Assets/System/UI/Options(Normal).png" id="1_fcocs"]
+[ext_resource type="Texture2D" uid="uid://bqbk3j0mmcpya" path="res://Assets/System/UI/Options.png" id="1_kuxix"]
+[ext_resource type="Texture2D" uid="uid://c4jniavs7l51h" path="res://Assets/System/UI/Options(Pressedl).png" id="2_mfp4c"]
+[ext_resource type="ButtonGroup" uid="uid://ckarlnhkdcnc2" path="res://System/UI/Setting Menu/Settings_Menu.tres" id="3_ldu2v"]
+[ext_resource type="FontFile" uid="uid://dcx66fsva2smj" path="res://Assets/System/Fonts/Font.ttf" id="5_a1iti"]
+[ext_resource type="ButtonGroup" uid="uid://do11hcuub814t" path="res://System/UI/Setting Menu/Preset_Button_Group.tres" id="7_2lcdq"]
+[ext_resource type="Texture2D" uid="uid://b30kxv6w5et5h" path="res://Assets/System/UI/OptionsCheck(Normal).png" id="7_ueidx"]
+[ext_resource type="Texture2D" uid="uid://d0wt3ddf4ituj" path="res://Assets/System/UI/OptionsCheck(Pressed).png" id="8_2lcdq"]
+[ext_resource type="ButtonGroup" uid="uid://d0hle8agn45f2" path="res://System/UI/Setting Menu/Gameplay_Tab.tres" id="8_6squl"]
+[ext_resource type="Texture2D" uid="uid://vnowt2nqi3dv" path="res://Assets/System/UI/OptionsCheck(Hovered).png" id="9_3ey0a"]
+[ext_resource type="Script" uid="uid://bi86q2rscgk8p" path="res://System/UI/Setting Menu/preset_3_tab.gd" id="15_dvpaj"]
+
+[node name="Settings Tab" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a1iti")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 404.0
+offset_top = 9.0
+offset_right = 795.0
+offset_bottom = 124.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.167451, 0.167451, 0.167451, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_fonts/font = ExtResource("1_6rg0q")
+theme_override_font_sizes/font_size = 90
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Video" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 85.0
+offset_right = 265.0
+offset_bottom = 149.0
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("3_ldu2v")
+texture_normal = ExtResource("1_fcocs")
+texture_pressed = ExtResource("2_mfp4c")
+texture_hover = ExtResource("1_kuxix")
+
+[node name="Label" type="Label" parent="Video"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = -3.0
+offset_right = 187.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("5_a1iti")
+theme_override_font_sizes/font_size = 50
+text = "Video"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Video"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.039
+anchor_top = -1.245
+anchor_right = 4.98
+anchor_bottom = 9.937
+offset_left = -0.0549994
+offset_top = 144.68
+offset_right = 0.0999756
+offset_bottom = 0.0319824
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FPS" type="Label" parent="Video/Panel"]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 21.0
+offset_right = 714.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 50
+text = "FPS: 60"
+
+[node name="HSlider" type="HSlider" parent="Video/Panel"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 98.0
+offset_right = 649.0
+offset_bottom = 114.0
+scale = Vector2(2, 2)
+max_value = 2.0
+value = 1.0
+tick_count = 3
+
+[node name="CheckButton" type="CheckButton" parent="Video/Panel"]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 189.0
+offset_right = 698.0
+offset_bottom = 219.125
+scale = Vector2(2.5, 2.5)
+theme_override_font_sizes/font_size = 30
+
+[node name="V-Sync" type="Label" parent="Video/Panel"]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 187.0
+offset_right = 646.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 50
+text = "V-Sync:"
+
+[node name="OptionButton" type="OptionButton" parent="Video/Panel"]
+layout_mode = 0
+offset_left = 676.0
+offset_top = 341.0
+offset_right = 918.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 40
+selected = 2
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Maximized"
+popup/item_1/id = 1
+popup/item_2/text = "FullScreen"
+popup/item_2/id = 2
+
+[node name="Screen" type="Label" parent="Video/Panel"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 332.0
+offset_right = 667.0
+offset_bottom = 401.0
+theme_override_font_sizes/font_size = 50
+text = "Screen Mode:"
+
+[node name="Audio" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 321.0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 149.0
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("3_ldu2v")
+texture_normal = ExtResource("1_fcocs")
+texture_pressed = ExtResource("2_mfp4c")
+texture_hover = ExtResource("1_kuxix")
+
+[node name="Label" type="Label" parent="Audio"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = -2.0
+offset_right = 192.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("5_a1iti")
+theme_override_font_sizes/font_size = 50
+text = "Audio"
+
+[node name="Panel" type="Panel" parent="Audio"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.259
+anchor_top = -1.267
+anchor_right = 3.761
+anchor_bottom = 9.922
+offset_left = 0.0450134
+offset_top = 146.088
+offset_right = -0.0550537
+offset_bottom = -0.00805664
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="Audio/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -161.5
+offset_right = 545.0
+offset_bottom = -145.5
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+rounded = true
+
+[node name="Label" type="Label" parent="Audio/Panel/HSlider"]
+layout_mode = 0
+offset_left = -283.0
+offset_top = -29.0
+offset_right = -79.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 50
+text = "General:"
+
+[node name="Percentage" type="Label" parent="Audio/Panel/HSlider"]
+layout_mode = 0
+offset_left = 236.0
+offset_top = -66.0
+offset_right = 308.0
+offset_bottom = 3.0
+theme_override_font_sizes/font_size = 50
+text = "50%"
+horizontal_alignment = 2
+
+[node name="HSlider2" type="HSlider" parent="Audio/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -11.5
+offset_right = 545.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+rounded = true
+
+[node name="Label" type="Label" parent="Audio/Panel/HSlider2"]
+layout_mode = 0
+offset_left = -234.0
+offset_top = -29.0
+offset_right = -30.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 50
+text = "Music:"
+
+[node name="Percentage" type="Label" parent="Audio/Panel/HSlider2"]
+layout_mode = 0
+offset_left = 236.0
+offset_top = -66.0
+offset_right = 308.0
+offset_bottom = 3.0
+theme_override_font_sizes/font_size = 50
+text = "50%"
+horizontal_alignment = 2
+
+[node name="HSlider3" type="HSlider" parent="Audio/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = 138.5
+offset_right = 545.0
+offset_bottom = 154.5
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+rounded = true
+
+[node name="Label" type="Label" parent="Audio/Panel/HSlider3"]
+layout_mode = 0
+offset_left = -421.0
+offset_top = -33.0
+offset_right = -79.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 50
+text = "Sound Effects:"
+
+[node name="Percentage" type="Label" parent="Audio/Panel/HSlider3"]
+layout_mode = 0
+offset_left = 236.0
+offset_top = -66.0
+offset_right = 308.0
+offset_bottom = 3.0
+theme_override_font_sizes/font_size = 50
+text = "50%"
+horizontal_alignment = 2
+
+[node name="Controls" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 631.0
+offset_top = 85.0
+offset_right = 886.0
+offset_bottom = 149.0
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("3_ldu2v")
+texture_normal = ExtResource("1_fcocs")
+texture_pressed = ExtResource("2_mfp4c")
+texture_hover = ExtResource("1_kuxix")
+
+[node name="Label" type="Label" parent="Controls"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = -4.0
+offset_right = 225.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("5_a1iti")
+theme_override_font_sizes/font_size = 50
+text = "Controls"
+
+[node name="Panel" type="Panel" parent="Controls"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.475
+anchor_top = -1.304
+anchor_right = 2.545
+anchor_bottom = 9.937
+offset_left = 0.125061
+offset_top = 148.456
+offset_right = 0.0249634
+offset_bottom = 0.0319824
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeyBinds" type="Label" parent="Controls/Panel"]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 33.0
+offset_right = 759.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 50
+text = "KEYBINDS:"
+
+[node name="Keys" type="Control" parent="Controls/Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Up" type="Label" parent="Controls/Panel/Keys"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 113.0
+offset_right = 293.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 30
+text = "UP:"
+
+[node name="Down" type="Label" parent="Controls/Panel/Keys"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 173.0
+offset_right = 293.0
+offset_bottom = 242.0
+theme_override_font_sizes/font_size = 30
+text = "Down:"
+
+[node name="Left" type="Label" parent="Controls/Panel/Keys"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 233.0
+offset_right = 293.0
+offset_bottom = 302.0
+theme_override_font_sizes/font_size = 30
+text = "Left:"
+
+[node name="Right" type="Label" parent="Controls/Panel/Keys"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 293.0
+offset_right = 293.0
+offset_bottom = 362.0
+theme_override_font_sizes/font_size = 30
+text = "Right:"
+
+[node name="Action 1" type="Label" parent="Controls/Panel/Keys"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 113.0
+offset_right = 593.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 30
+text = "Action1:"
+
+[node name="Action 2" type="Label" parent="Controls/Panel/Keys"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 173.0
+offset_right = 593.0
+offset_bottom = 242.0
+theme_override_font_sizes/font_size = 30
+text = "Action2:"
+
+[node name="Cancel" type="Label" parent="Controls/Panel/Keys"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 232.0
+offset_right = 658.0
+offset_bottom = 301.0
+theme_override_font_sizes/font_size = 30
+text = "Cancel (also Bounce):"
+
+[node name="Secondary1" type="Label" parent="Controls/Panel/Keys"]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 112.0
+offset_right = 1158.0
+offset_bottom = 181.0
+theme_override_font_sizes/font_size = 30
+text = "Secondary1:"
+
+[node name="Secondary2" type="Label" parent="Controls/Panel/Keys"]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 232.0
+offset_right = 1158.0
+offset_bottom = 301.0
+theme_override_font_sizes/font_size = 30
+text = "Secondary2:"
+
+[node name="Gameplay" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 955.0
+offset_top = 85.0
+offset_right = 1210.0
+offset_bottom = 149.0
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("3_ldu2v")
+texture_normal = ExtResource("1_fcocs")
+texture_pressed = ExtResource("2_mfp4c")
+texture_hover = ExtResource("1_kuxix")
+script = ExtResource("15_dvpaj")
+
+[node name="Label" type="Label" parent="Gameplay"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -4.0
+offset_right = 242.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("5_a1iti")
+theme_override_font_sizes/font_size = 50
+text = "Gameplay"
+
+[node name="Panel" type="Panel" parent="Gameplay"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.745
+anchor_top = -1.287
+anchor_right = 1.275
+anchor_bottom = 9.922
+offset_left = -0.0249634
+offset_top = 147.368
+offset_right = -0.125031
+offset_bottom = -0.00805664
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Default" type="TextureButton" parent="Gameplay/Panel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 25.0
+offset_right = 306.0
+offset_bottom = 89.0
+toggle_mode = true
+button_group = ExtResource("8_6squl")
+texture_normal = ExtResource("1_fcocs")
+texture_pressed = ExtResource("2_mfp4c")
+texture_hover = ExtResource("1_kuxix")
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Default"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 21.0
+offset_right = 263.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("1_6rg0q")
+theme_override_font_sizes/font_size = 32
+text = "Default Presets"
+horizontal_alignment = 1
+
+[node name="DefaultTab" type="Control" parent="Gameplay/Panel/Default"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Option" type="Label" parent="Gameplay/Panel/Default/DefaultTab"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 104.0
+offset_right = 574.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 50
+text = "Gameplay Style:"
+
+[node name="OptionButton" type="OptionButton" parent="Gameplay/Panel/Default/DefaultTab"]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 108.0
+offset_right = 995.0
+offset_bottom = 185.0
+theme_override_font_sizes/font_size = 50
+selected = 0
+item_count = 4
+popup/item_0/text = "Level Default"
+popup/item_0/id = 0
+popup/item_1/text = "Classic Style"
+popup/item_1/id = 1
+popup/item_2/text = "Adventure Style"
+popup/item_2/id = 2
+popup/item_3/text = "Boost Style"
+popup/item_3/id = 3
+
+[node name="Level" type="Label" parent="Gameplay/Panel/Default/DefaultTab"]
+visible = false
+layout_mode = 0
+offset_left = 154.0
+offset_top = 209.0
+offset_right = 1042.0
+offset_bottom = 380.0
+theme_override_font_sizes/font_size = 40
+text = "The gameplay style selected by the level 
+by default, it can be any of the other 3 
+gameplay style presets, or even a custom one!"
+
+[node name="Classic" type="Label" parent="Gameplay/Panel/Default/DefaultTab"]
+visible = false
+layout_mode = 0
+offset_left = 154.0
+offset_top = 209.0
+offset_right = 1127.0
+offset_bottom = 380.0
+theme_override_font_sizes/font_size = 40
+text = "The classsic gameplay style, focused more on
+conserving momentum. The abilities included are:
+Roll, Jump, Spindash, Dropdash and the Peel out"
+
+[node name="Adventure" type="Label" parent="Gameplay/Panel/Default/DefaultTab"]
+visible = false
+layout_mode = 0
+offset_left = 152.0
+offset_top = 209.0
+offset_right = 1186.0
+offset_bottom = 380.0
+theme_override_font_sizes/font_size = 40
+text = "A simulation of the adventure gameplay style.
+The available abilities are: The same from the
+classic style, while adding Bounce and Homing attack"
+
+[node name="Boost" type="Label" parent="Gameplay/Panel/Default/DefaultTab"]
+visible = false
+layout_mode = 0
+offset_left = 150.0
+offset_top = 209.0
+offset_right = 998.0
+offset_bottom = 438.0
+theme_override_font_sizes/font_size = 40
+text = "Go fast! simulating the boost formula, a test
+to your reaction time. Included abilities: all 
+the abilities from the previous gameplay
+styles, but now with the boost mechanic"
+
+[node name="Preset1" type="TextureButton" parent="Gameplay/Panel"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 25.0
+offset_right = 606.0
+offset_bottom = 89.0
+toggle_mode = true
+button_group = ExtResource("8_6squl")
+texture_normal = ExtResource("1_fcocs")
+texture_pressed = ExtResource("2_mfp4c")
+texture_hover = ExtResource("1_kuxix")
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset1"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 21.0
+offset_right = 263.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("1_6rg0q")
+theme_override_font_sizes/font_size = 32
+text = "Preset 1"
+horizontal_alignment = 1
+
+[node name="Preset1Tab" type="Control" parent="Gameplay/Panel/Preset1"]
+visible = false
+anchors_preset = 0
+offset_left = -352.0
+offset_top = -200.0
+offset_right = -312.0
+offset_bottom = -160.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Gameplay/Panel/Preset1/Preset1Tab"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 260.0
+offset_right = 1280.0
+offset_bottom = 719.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Classic Gameplay:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -250
+
+[node name="CheckButton" type="CheckButton" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Spindash: "
+
+[node name="CheckButton2" type="CheckButton" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Peel-Out: "
+
+[node name="CheckButton3" type="CheckButton" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "DropDash: "
+
+[node name="Label2" type="Label" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Adventure Gameplay:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -400
+
+[node name="CheckButton" type="CheckButton" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Bounce: "
+
+[node name="CheckButton2" type="CheckButton" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Homming Attack: "
+
+[node name="Label3" type="Label" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Boost Gameplay:"
+horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Boost: "
+
+[node name="Label4" type="Label" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Other:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 90
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TopSpeed:"
+
+[node name="SpinBox" type="SpinBox" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer3"]
+layout_mode = 2
+min_value = 120.0
+max_value = 999999.0
+value = 1200.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Acceleration:"
+
+[node name="SpinBox" type="SpinBox" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer"]
+layout_mode = 2
+min_value = 1.0
+max_value = 10.0
+step = 0.01
+value = 2.0
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Jump Velocity:"
+
+[node name="SpinBox" type="SpinBox" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer2"]
+layout_mode = 2
+min_value = 100.0
+max_value = 1600.0
+value = 400.0
+alignment = 1
+
+[node name="Label5" type="Label" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Select This Preset?"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Control" type="Control" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="PresetButton" type="TextureButton" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+toggle_mode = true
+button_group = ExtResource("7_2lcdq")
+texture_normal = ExtResource("7_ueidx")
+texture_pressed = ExtResource("8_2lcdq")
+texture_hover = ExtResource("9_3ey0a")
+
+[node name="Preset2" type="TextureButton" parent="Gameplay/Panel"]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 25.0
+offset_right = 906.0
+offset_bottom = 89.0
+toggle_mode = true
+button_group = ExtResource("8_6squl")
+texture_normal = ExtResource("1_fcocs")
+texture_pressed = ExtResource("2_mfp4c")
+texture_hover = ExtResource("1_kuxix")
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset2"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 21.0
+offset_right = 263.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("1_6rg0q")
+theme_override_font_sizes/font_size = 32
+text = "Preset 2"
+horizontal_alignment = 1
+
+[node name="Preset2Tab" type="Control" parent="Gameplay/Panel/Preset2"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -652.0
+offset_top = -200.0
+offset_right = -612.0
+offset_bottom = -160.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Gameplay/Panel/Preset2/Preset2Tab"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 260.0
+offset_right = 1280.0
+offset_bottom = 719.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Classic Gameplay:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -250
+
+[node name="CheckButton" type="CheckButton" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Spindash: "
+
+[node name="CheckButton2" type="CheckButton" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Peel-Out: "
+
+[node name="CheckButton3" type="CheckButton" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "DropDash: "
+
+[node name="Label2" type="Label" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Adventure Gameplay:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -400
+
+[node name="CheckButton" type="CheckButton" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Bounce: "
+
+[node name="CheckButton2" type="CheckButton" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Homming Attack: "
+
+[node name="Label3" type="Label" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Boost Gameplay:"
+horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Boost: "
+
+[node name="Label4" type="Label" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Other:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 90
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TopSpeed:"
+
+[node name="SpinBox" type="SpinBox" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer3"]
+layout_mode = 2
+min_value = 120.0
+max_value = 999999.0
+value = 1200.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Acceleration:"
+
+[node name="SpinBox" type="SpinBox" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer"]
+layout_mode = 2
+min_value = 1.0
+max_value = 10.0
+step = 0.01
+value = 2.0
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Jump Velocity:"
+
+[node name="SpinBox" type="SpinBox" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer2"]
+layout_mode = 2
+min_value = 100.0
+max_value = 1600.0
+value = 400.0
+alignment = 1
+
+[node name="Label5" type="Label" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Select This Preset?"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Control" type="Control" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="PresetButton" type="TextureButton" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+toggle_mode = true
+button_group = ExtResource("7_2lcdq")
+texture_normal = ExtResource("7_ueidx")
+texture_pressed = ExtResource("8_2lcdq")
+texture_hover = ExtResource("9_3ey0a")
+
+[node name="Preset3" type="TextureButton" parent="Gameplay/Panel"]
+layout_mode = 0
+offset_left = 951.0
+offset_top = 25.0
+offset_right = 1206.0
+offset_bottom = 89.0
+toggle_mode = true
+button_group = ExtResource("8_6squl")
+texture_normal = ExtResource("1_fcocs")
+texture_pressed = ExtResource("2_mfp4c")
+texture_hover = ExtResource("1_kuxix")
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset3"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 21.0
+offset_right = 263.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("1_6rg0q")
+theme_override_font_sizes/font_size = 32
+text = "Preset 3"
+horizontal_alignment = 1
+
+[node name="Preset3Tab" type="Control" parent="Gameplay/Panel/Preset3"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -952.0
+offset_top = -200.0
+offset_right = -912.0
+offset_bottom = -160.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Gameplay/Panel/Preset3/Preset3Tab"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 260.0
+offset_right = 1280.0
+offset_bottom = 719.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Classic Gameplay:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -250
+
+[node name="CheckButton" type="CheckButton" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Spindash: "
+
+[node name="CheckButton2" type="CheckButton" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Peel-Out: "
+
+[node name="CheckButton3" type="CheckButton" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "DropDash: "
+
+[node name="Label2" type="Label" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Adventure Gameplay:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -400
+
+[node name="CheckButton" type="CheckButton" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Bounce: "
+
+[node name="CheckButton2" type="CheckButton" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Homming Attack: "
+
+[node name="Label3" type="Label" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Boost Gameplay:"
+horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+theme_override_constants/check_v_offset = 5
+text = "Boost: "
+
+[node name="Label4" type="Label" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Other:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 90
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TopSpeed:"
+
+[node name="SpinBox" type="SpinBox" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer3"]
+layout_mode = 2
+min_value = 120.0
+max_value = 999999.0
+value = 1200.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Acceleration:"
+
+[node name="SpinBox" type="SpinBox" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer"]
+layout_mode = 2
+min_value = 1.0
+max_value = 10.0
+step = 0.01
+value = 2.0
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Jump Velocity:"
+
+[node name="SpinBox" type="SpinBox" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer4/HBoxContainer2"]
+layout_mode = 2
+min_value = 100.0
+max_value = 1600.0
+value = 400.0
+alignment = 1
+
+[node name="Label5" type="Label" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Select This Preset?"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Control" type="Control" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="PresetButton" type="TextureButton" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+toggle_mode = true
+button_group = ExtResource("7_2lcdq")
+texture_normal = ExtResource("7_ueidx")
+texture_pressed = ExtResource("8_2lcdq")
+texture_hover = ExtResource("9_3ey0a")
+
+[connection signal="toggled" from="Video" to="." method="_on_video_toggled"]
+[connection signal="toggled" from="Audio" to="." method="_on_audio_toggled"]
+[connection signal="toggled" from="Controls" to="." method="_on_controls_toggled"]
+[connection signal="toggled" from="Gameplay" to="." method="_on_gameplay_toggled"]
+[connection signal="toggled" from="Gameplay/Panel/Default" to="." method="_on_gameplay_default_toggled"]
+[connection signal="toggled" from="Gameplay/Panel/Preset1" to="." method="_on_gameplay_preset_1_toggled"]
+[connection signal="toggled" from="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer/PresetButton" to="." method="_on_preset_button_toggled"]
+[connection signal="toggled" from="Gameplay/Panel/Preset2" to="." method="_on_gameplay_preset_2_toggled"]
+[connection signal="toggled" from="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer/PresetButton" to="." method="_on_preset2_button_toggled"]
+[connection signal="toggled" from="Gameplay/Panel/Preset3" to="." method="_on_gameplay_preset_3_toggled"]
+[connection signal="toggled" from="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer/PresetButton" to="." method="_on_preset3_button_toggled"]

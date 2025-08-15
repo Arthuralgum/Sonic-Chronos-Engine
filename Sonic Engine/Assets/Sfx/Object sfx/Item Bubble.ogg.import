@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dpws5wacnjntd"
+path="res://.godot/imported/Item Bubble.ogg-2224ea17aeeeb7a925c628984d362b92.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Object sfx/Item Bubble.ogg"
+dest_files=["res://.godot/imported/Item Bubble.ogg-2224ea17aeeeb7a925c628984d362b92.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

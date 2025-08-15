@@ -1,0 +1,308 @@
+[gd_scene load_steps=13 format=3 uid="uid://d1p138h61rg6j"]
+
+[ext_resource type="Script" uid="uid://dkjgsywx4ql7x" path="res://System/preset_selection_screen.gd" id="1_at4ul"]
+[ext_resource type="ButtonGroup" uid="uid://d0hle8agn45f2" path="res://System/UI/Setting Menu/Gameplay_Tab.tres" id="2_6tkrh"]
+[ext_resource type="Texture2D" uid="uid://6s1sa12muew8" path="res://Assets/System/UI/Options(Normal).png" id="3_03ug3"]
+[ext_resource type="Texture2D" uid="uid://c4jniavs7l51h" path="res://Assets/System/UI/Options(Pressedl).png" id="4_l6pai"]
+[ext_resource type="Texture2D" uid="uid://bqbk3j0mmcpya" path="res://Assets/System/UI/Options.png" id="5_pbnwp"]
+[ext_resource type="FontFile" uid="uid://bipbksms2o5x7" path="res://Assets/System/Fonts/Obised.ttf" id="6_lk3ln"]
+[ext_resource type="Texture2D" uid="uid://brxwti14g6d0m" path="res://Assets/System/UI/Check(True).png" id="7_03ug3"]
+[ext_resource type="FontFile" uid="uid://jyuoq6c8vu0f" path="res://Assets/System/Fonts/Vipnagorgialla Bd.otf" id="7_l6pai"]
+[ext_resource type="Texture2D" uid="uid://deevuiuokojn0" path="res://Assets/System/UI/Check(False).png" id="8_l6pai"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03ug3"]
+atlas = ExtResource("8_l6pai")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6pai"]
+atlas = ExtResource("7_03ug3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbnwp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03ug3")
+}],
+"loop": false,
+"name": &"False",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6pai")
+}],
+"loop": false,
+"name": &"True",
+"speed": 1.0
+}]
+
+[node name="Preset Selection Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_at4ul")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.288518, 0.288518, 0.288518, 1)
+
+[node name="Default" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 25.0
+offset_right = 306.0
+offset_bottom = 89.0
+toggle_mode = true
+button_group = ExtResource("2_6tkrh")
+texture_normal = ExtResource("3_03ug3")
+texture_pressed = ExtResource("4_l6pai")
+texture_hover = ExtResource("5_pbnwp")
+
+[node name="Label" type="Label" parent="Default"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 21.0
+offset_right = 263.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("6_lk3ln")
+theme_override_font_sizes/font_size = 32
+text = "Default Presets"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="Default"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 227.0
+offset_right = 1141.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("7_l6pai")
+theme_override_font_sizes/font_size = 60
+text = "The default preset selected
+by the level (recommended)"
+horizontal_alignment = 1
+
+[node name="Preset1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 25.0
+offset_right = 606.0
+offset_bottom = 89.0
+toggle_mode = true
+button_group = ExtResource("2_6tkrh")
+texture_normal = ExtResource("3_03ug3")
+texture_pressed = ExtResource("4_l6pai")
+texture_hover = ExtResource("5_pbnwp")
+
+[node name="Label" type="Label" parent="Preset1"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 21.0
+offset_right = 263.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("6_lk3ln")
+theme_override_font_sizes/font_size = 32
+text = "Preset1"
+horizontal_alignment = 1
+
+[node name="Preset2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 25.0
+offset_right = 906.0
+offset_bottom = 89.0
+toggle_mode = true
+button_group = ExtResource("2_6tkrh")
+texture_normal = ExtResource("3_03ug3")
+texture_pressed = ExtResource("4_l6pai")
+texture_hover = ExtResource("5_pbnwp")
+
+[node name="Label" type="Label" parent="Preset2"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 21.0
+offset_right = 263.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("6_lk3ln")
+theme_override_font_sizes/font_size = 32
+text = "Preset2"
+horizontal_alignment = 1
+
+[node name="Preset3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 951.0
+offset_top = 25.0
+offset_right = 1206.0
+offset_bottom = 89.0
+toggle_mode = true
+button_group = ExtResource("2_6tkrh")
+texture_normal = ExtResource("3_03ug3")
+texture_pressed = ExtResource("4_l6pai")
+texture_hover = ExtResource("5_pbnwp")
+
+[node name="Label" type="Label" parent="Preset3"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 21.0
+offset_right = 263.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("6_lk3ln")
+theme_override_font_sizes/font_size = 32
+text = "Preset3"
+horizontal_alignment = 1
+
+[node name="Confirm" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 634.0
+offset_top = 520.0
+offset_right = 889.0
+offset_bottom = 584.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_03ug3")
+texture_pressed = ExtResource("4_l6pai")
+texture_hover = ExtResource("5_pbnwp")
+
+[node name="Label" type="Label" parent="Confirm"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 21.0
+offset_right = 263.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("6_lk3ln")
+theme_override_font_sizes/font_size = 32
+text = "Confirm"
+horizontal_alignment = 1
+
+[node name="Configs" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 951.0
+offset_top = 25.0
+offset_right = 991.0
+offset_bottom = 65.0
+
+[node name="Spindash" type="Label" parent="Configs"]
+layout_mode = 0
+offset_left = -897.0
+offset_top = 101.0
+offset_right = -663.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 50
+text = "Spindash:"
+
+[node name="PeelOut" type="Label" parent="Configs"]
+layout_mode = 0
+offset_left = -898.0
+offset_top = 200.0
+offset_right = -664.0
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 50
+text = "PeelOut:"
+
+[node name="DropDash" type="Label" parent="Configs"]
+layout_mode = 0
+offset_left = -898.0
+offset_top = 300.0
+offset_right = -643.0
+offset_bottom = 369.0
+theme_override_font_sizes/font_size = 50
+text = "DropDash:"
+
+[node name="Bounce" type="Label" parent="Configs"]
+layout_mode = 0
+offset_left = -898.0
+offset_top = 400.0
+offset_right = -664.0
+offset_bottom = 469.0
+theme_override_font_sizes/font_size = 50
+text = "Bounce:"
+
+[node name="Homming Attack" type="Label" parent="Configs"]
+layout_mode = 0
+offset_left = -898.0
+offset_top = 500.0
+offset_right = -480.0
+offset_bottom = 569.0
+theme_override_font_sizes/font_size = 50
+text = "Homming Attack:"
+
+[node name="Boost" type="Label" parent="Configs"]
+layout_mode = 0
+offset_left = -235.0
+offset_top = 101.0
+offset_right = -1.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 50
+text = "Boost:"
+
+[node name="TopSpeed" type="Label" parent="Configs"]
+layout_mode = 0
+offset_left = -230.0
+offset_top = 201.0
+offset_right = 21.0
+offset_bottom = 270.0
+theme_override_font_sizes/font_size = 50
+text = "TopSpeed:"
+
+[node name="Acceleration" type="Label" parent="Configs"]
+layout_mode = 0
+offset_left = -230.0
+offset_top = 301.0
+offset_right = 84.0
+offset_bottom = 370.0
+theme_override_font_sizes/font_size = 50
+text = "Acceleration:"
+
+[node name="Jump Velocity" type="Label" parent="Configs"]
+layout_mode = 0
+offset_left = -230.0
+offset_top = 401.0
+offset_right = 112.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 50
+text = "Jump Velocity:"
+
+[node name="SpindashCheck" type="AnimatedSprite2D" parent="Configs"]
+position = Vector2(-573, 141)
+sprite_frames = SubResource("SpriteFrames_pbnwp")
+animation = &"False"
+autoplay = "False"
+
+[node name="PeelOutCheck" type="AnimatedSprite2D" parent="Configs"]
+position = Vector2(-573, 241)
+sprite_frames = SubResource("SpriteFrames_pbnwp")
+animation = &"False"
+autoplay = "False"
+
+[node name="DropdashCheck" type="AnimatedSprite2D" parent="Configs"]
+position = Vector2(-573, 341)
+sprite_frames = SubResource("SpriteFrames_pbnwp")
+animation = &"False"
+autoplay = "False"
+
+[node name="BounceCheck" type="AnimatedSprite2D" parent="Configs"]
+position = Vector2(-573, 441)
+sprite_frames = SubResource("SpriteFrames_pbnwp")
+animation = &"False"
+autoplay = "False"
+
+[node name="HommingAttackCheck" type="AnimatedSprite2D" parent="Configs"]
+position = Vector2(-438, 541)
+sprite_frames = SubResource("SpriteFrames_pbnwp")
+animation = &"False"
+autoplay = "False"
+
+[node name="BoostCheck" type="AnimatedSprite2D" parent="Configs"]
+position = Vector2(-33, 141)
+sprite_frames = SubResource("SpriteFrames_pbnwp")
+animation = &"False"
+autoplay = "False"

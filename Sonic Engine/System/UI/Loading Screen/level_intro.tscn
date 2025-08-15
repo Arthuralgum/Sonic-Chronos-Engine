@@ -1,0 +1,639 @@
+[gd_scene load_steps=20 format=3 uid="uid://cfresg3dt0pkc"]
+
+[ext_resource type="Texture2D" uid="uid://cv1k232fwex1o" path="res://Assets/System/Loading Screen/red_polygon.png" id="1_ee5ef"]
+[ext_resource type="Script" uid="uid://c21enrerd3ta3" path="res://System/UI/Loading Screen/level_intro.gd" id="1_fnrjp"]
+[ext_resource type="Texture2D" uid="uid://cx1xuw0kgg5a3" path="res://Assets/System/Loading Screen/Sonic_logo.png" id="2_j6aj8"]
+[ext_resource type="FontFile" uid="uid://jyuoq6c8vu0f" path="res://Assets/System/Fonts/Vipnagorgialla Bd.otf" id="4_n6058"]
+[ext_resource type="Texture2D" uid="uid://dlxs4w163hj0b" path="res://Assets/System/Loading Screen/shadow_logo.png" id="4_yr7e1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yr7e1"]
+
+[sub_resource type="Animation" id="Animation_fnrjp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("red polygon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.38419e-07, 360)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("red polygon2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, -360)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("red polygon3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, -312)]
+}
+
+[sub_resource type="Animation" id="Animation_j6aj8"]
+resource_name = "left_right"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("red polygon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.38419e-07, 360), Vector2(640, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_n6058"]
+resource_name = "up_down"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("red polygon2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, -312), Vector2(640, 407)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("red polygon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 360), Vector2(640, 1079)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("red polygon3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, -984), Vector2(640, -265)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6058"]
+_data = {
+&"RESET": SubResource("Animation_fnrjp"),
+&"enter": SubResource("Animation_j6aj8"),
+&"loop": SubResource("Animation_n6058")
+}
+
+[sub_resource type="Animation" id="Animation_ee5ef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sonic Logo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(815, 361)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow Logo:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-121, 361)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AfterImage:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AfterImage:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(815, 361)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AfterImage:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.262645]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AfterImage:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 10)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AfterImage:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("red polygon:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("red polygon2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sonic Logo:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Shadow Logo:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Stage Number:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Chronos Engine:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.729412)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Level Title:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath(".:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0ow81"]
+resource_name = "afterimage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AfterImage:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AfterImage:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.750289),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(815, 361), Vector2(815, 361)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AfterImage:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.785398]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AfterImage:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.750289),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(10, 10)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AfterImage:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.750289),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yr7e1"]
+resource_name = "Enter"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sonic Logo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-121, 361), Vector2(815, 361)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow Logo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-121, 361), Vector2(815, 361)]
+}
+
+[sub_resource type="Animation" id="Animation_roiua"]
+resource_name = "fade_out"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6aj8"]
+_data = {
+&"RESET": SubResource("Animation_ee5ef"),
+&"afterimage": SubResource("Animation_0ow81"),
+&"enter": SubResource("Animation_yr7e1"),
+&"fade_out": SubResource("Animation_roiua")
+}
+
+[sub_resource type="Animation" id="Animation_bbjqx"]
+resource_name = "Enter"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Level Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1280, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Stage Number:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1280, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Chronos Engine:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(181, 993), Vector2(181, -131)]
+}
+
+[sub_resource type="Animation" id="Animation_cbogr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Level Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Stage Number:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1280, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Chronos Engine:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(181, -837)]
+}
+
+[sub_resource type="Animation" id="Animation_32mwe"]
+resource_name = "loop"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_32mwe"]
+_data = {
+&"Enter": SubResource("Animation_bbjqx"),
+&"RESET": SubResource("Animation_cbogr"),
+&"loop": SubResource("Animation_32mwe")
+}
+
+[node name="Level_intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fnrjp")
+stage_number = "1"
+stage_title_first_line = "Metal"
+stage_title_second_line = "Harbor"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(640.375, 357.375)
+scale = Vector2(1281.25, 715.25)
+texture = SubResource("CanvasTexture_yr7e1")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+anchors_preset = -1
+anchor_right = 17.016
+anchor_bottom = 14.005
+offset_left = -0.741756
+offset_top = -0.791856
+offset_right = -15.7578
+offset_bottom = -12.7969
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Red Polygon Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n6058")
+}
+
+[node name="Sonic Logo Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_j6aj8")
+}
+
+[node name="red polygon" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, 360)
+scale = Vector2(0.937042, 0.9375)
+texture = ExtResource("1_ee5ef")
+
+[node name="red polygon2" type="Sprite2D" parent="."]
+position = Vector2(640, -360)
+scale = Vector2(0.937042, 0.9375)
+texture = ExtResource("1_ee5ef")
+
+[node name="red polygon3" type="Sprite2D" parent="."]
+position = Vector2(640, -312)
+scale = Vector2(0.937042, 0.9375)
+texture = ExtResource("1_ee5ef")
+
+[node name="Sonic Logo" type="Sprite2D" parent="."]
+position = Vector2(815, 361)
+texture = ExtResource("2_j6aj8")
+
+[node name="Shadow Logo" type="Sprite2D" parent="."]
+position = Vector2(-121, 361)
+texture = ExtResource("4_yr7e1")
+
+[node name="AfterImage" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(815, 361)
+rotation = -0.262645
+scale = Vector2(10, 10)
+
+[node name="Sonic Logo(Afterimage)" type="Sprite2D" parent="AfterImage"]
+visible = false
+modulate = Color(1, 1, 1, 0.392157)
+texture = ExtResource("2_j6aj8")
+
+[node name="Shadow Logo(Afterimage)" type="Sprite2D" parent="AfterImage"]
+visible = false
+modulate = Color(1, 1, 1, 0.392157)
+texture = ExtResource("4_yr7e1")
+
+[node name="Labels" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_32mwe")
+}
+
+[node name="Level Title" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="Level Title"]
+offset_left = 449.0
+offset_top = 283.0
+offset_right = 700.0
+offset_bottom = 438.0
+theme_override_fonts/font = ExtResource("4_n6058")
+theme_override_font_sizes/font_size = 60
+text = "Stage
+Title"
+
+[node name="Stage Number" type="Sprite2D" parent="."]
+position = Vector2(-1280, 0)
+
+[node name="Label" type="Label" parent="Stage Number"]
+offset_left = 411.0
+offset_top = 219.0
+offset_right = 583.0
+offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("4_n6058")
+theme_override_font_sizes/font_size = 28
+text = "Stage  X:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Chronos Engine" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.729412)
+position = Vector2(181, -837)
+rotation = 1.5708
+
+[node name="Label" type="Label" parent="Chronos Engine"]
+offset_left = -663.0
+offset_top = 7.99891
+offset_right = 1151.0
+offset_bottom = 152.999
+theme_override_fonts/font = ExtResource("4_n6058")
+theme_override_font_sizes/font_size = 100
+text = "Sonic Chronos Engine"
+metadata/_edit_use_anchors_ = true
+
+[node name="Intro_Duration" type="Timer" parent="."]
+
+[connection signal="timeout" from="Intro_Duration" to="." method="_on_intro_duration_timeout"]

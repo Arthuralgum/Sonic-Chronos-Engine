@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhs56p25jd75p"]
+
+[ext_resource type="Script" uid="uid://mehvgs6actoj" path="res://Assets/Objects/Rings/Default Ring/RingDefault.gd" id="1_chtwi"]
+[ext_resource type="SpriteFrames" uid="uid://dvknt4klkgqt" path="res://Assets/Objects/Rings/Rings.tres" id="2_kcve2"]
+[ext_resource type="AudioStream" uid="uid://lcff40ljav2c" path="res://Assets/Sfx/Object sfx/sonic_ring_sound_effect.mp3" id="3_yvmvr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g322b"]
+radius = 88.0909
+
+[node name="RingArea" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_chtwi")
+
+[node name="CollisionArea" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_g322b")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("2_kcve2")
+animation = &"Default"
+frame_progress = 0.850035
+
+[node name="Sound Effect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yvmvr")
+volume_db = -15.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

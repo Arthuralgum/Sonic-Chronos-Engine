@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8xq3t7o2tg0k"]
+
+[ext_resource type="Script" uid="uid://cpfgewtx72utk" path="res://Objects/Loops/normal_loop.gd" id="1_4pgac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ealv"]
+size = Vector2(63, 316)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eq4ct"]
+size = Vector2(111, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pgac"]
+size = Vector2(63, 316)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7f4p"]
+size = Vector2(112, 134)
+
+[node name="Normal Loop" type="Node2D"]
+position = Vector2(429, 493)
+script = ExtResource("1_4pgac")
+
+[node name="RightCollision" type="StaticBody2D" parent="."]
+
+[node name="LeftCollision" type="StaticBody2D" parent="."]
+
+[node name="StartRight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRight"]
+position = Vector2(452, -148)
+shape = SubResource("RectangleShape2D_0ealv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StartRight"]
+position = Vector2(108.5, -205)
+shape = SubResource("RectangleShape2D_eq4ct")
+
+[node name="StartLeft" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartLeft"]
+position = Vector2(21.5, -148)
+shape = SubResource("RectangleShape2D_4pgac")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StartLeft"]
+position = Vector2(364, -205)
+shape = SubResource("RectangleShape2D_u7f4p")
+
+[connection signal="body_entered" from="StartRight" to="." method="_on_start_right_body_entered"]
+[connection signal="body_entered" from="StartLeft" to="." method="_on_start_left_body_entered"]

@@ -1,0 +1,442 @@
+[gd_scene load_steps=11 format=3 uid="uid://rvi1upvl5fhy"]
+
+[ext_resource type="Script" uid="uid://c81l1hs4534jc" path="res://System/UI/level_menu.gd" id="1_qgddc"]
+[ext_resource type="Texture2D" uid="uid://biasnag6prqs6" path="res://Assets/System/UI/Button(Normal).png" id="1_tnch1"]
+[ext_resource type="Texture2D" uid="uid://cxmflsod402sl" path="res://Assets/System/UI/Button(Pressed).png" id="2_qgddc"]
+[ext_resource type="Texture2D" uid="uid://bugvp13vvqy" path="res://Assets/System/UI/Button(Hovered).png" id="3_0j88f"]
+[ext_resource type="FontFile" uid="uid://bipbksms2o5x7" path="res://Assets/System/Fonts/Obised.ttf" id="5_0j88f"]
+[ext_resource type="FontFile" uid="uid://dcx66fsva2smj" path="res://Assets/System/Fonts/Font.ttf" id="5_nu6fm"]
+[ext_resource type="PackedScene" uid="uid://cb4ol40y8c3rs" path="res://System/UI/Setting Menu/settings_tab.tscn" id="6_gym5s"]
+
+[sub_resource type="Animation" id="Animation_0j88f"]
+resource_name = "Entrance"
+length = 0.700003
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttons/Resume:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-286, -0.25, 0, 0.25, 0, 777, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.233333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/Resume:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(408, -0.25, 0, 0.25, 0, 260, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.233333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons/Restart:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-509, -0.25, 0, 0.25, 0, 777, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.366667)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons/Restart:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(568, -0.25, 0, 0.25, 0, 380, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.366667)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Buttons/Settings:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-788, -0.25, 0, 0.25, 0, 777, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.433333)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Buttons/Settings:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(719, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.433333)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Buttons/MainMenu:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-991, -0.25, 0, 0.25, 0, 777, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.466667)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Buttons/MainMenu:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(877, -0.25, 0, 0.25, 0, 620, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.466667)
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Label:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.268276),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BG/ColorRect:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.268276),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qgddc"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttons/Resume:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-286, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/Resume:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(111, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons/Restart:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-509, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons/Restart:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(316, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Buttons/Settings:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-788, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Buttons/Settings:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(522, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Buttons/MainMenu:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-991, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Buttons/MainMenu:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(716, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Label:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BG/ColorRect:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0j88f"]
+_data = {
+&"Entrance": SubResource("Animation_0j88f"),
+&"RESET": SubResource("Animation_qgddc")
+}
+
+[node name="Control" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_qgddc")
+
+[node name="BG" type="Node2D" parent="."]
+position = Vector2(481, 1072)
+scale = Vector2(1.28689, 7.26621)
+
+[node name="TextureRect" type="TextureRect" parent="BG"]
+visible = false
+self_modulate = Color(0.46, 0.991, 1, 0.513726)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -719.0
+offset_top = -192.0
+offset_right = 43.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.17649, 2.17649)
+texture = ExtResource("3_0j88f")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+offset_left = -373.769
+offset_top = -147.532
+offset_right = -333.769
+offset_bottom = -107.532
+scale = Vector2(24.8685, 2.48964)
+color = Color(0.63, 0.63, 0.63, 0.423529)
+
+[node name="Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0j88f")
+}
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = -63.0
+offset_right = 43.0
+offset_bottom = -23.0
+
+[node name="Resume" type="Node2D" parent="Buttons"]
+position = Vector2(-286, 111)
+scale = Vector2(0.5, 0.5)
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/Resume"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -761.0
+offset_right = 1.0
+offset_bottom = 112.0
+grow_horizontal = 2
+toggle_mode = true
+texture_normal = ExtResource("1_tnch1")
+texture_pressed = ExtResource("2_qgddc")
+texture_hover = ExtResource("3_0j88f")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Buttons/Resume"]
+offset_left = -760.0
+offset_top = -14.0
+offset_right = -166.0
+offset_bottom = 263.0
+scale = Vector2(1.28788, 1.28002)
+theme_override_colors/font_color = Color(0.98, 0.996667, 1, 1)
+theme_override_fonts/font = ExtResource("5_nu6fm")
+theme_override_font_sizes/font_size = 65
+text = "RESUME"
+horizontal_alignment = 1
+
+[node name="Restart" type="Node2D" parent="Buttons"]
+position = Vector2(-509, 316)
+scale = Vector2(0.5, 0.5)
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/Restart"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -761.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 111.0
+grow_horizontal = 2
+toggle_mode = true
+texture_normal = ExtResource("1_tnch1")
+texture_pressed = ExtResource("2_qgddc")
+texture_hover = ExtResource("3_0j88f")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Buttons/Restart"]
+offset_left = -760.0
+offset_top = -14.0
+offset_right = -166.0
+offset_bottom = 263.0
+scale = Vector2(1.28002, 1.28002)
+theme_override_colors/font_color = Color(0.980392, 0.996078, 1, 1)
+theme_override_fonts/font = ExtResource("5_nu6fm")
+theme_override_font_sizes/font_size = 65
+text = "RESTART
+"
+horizontal_alignment = 1
+
+[node name="Settings" type="Node2D" parent="Buttons"]
+position = Vector2(-788, 522)
+scale = Vector2(0.5, 0.5)
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -760.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 110.0
+grow_horizontal = 2
+toggle_mode = true
+texture_normal = ExtResource("1_tnch1")
+texture_pressed = ExtResource("2_qgddc")
+texture_hover = ExtResource("3_0j88f")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Buttons/Settings"]
+offset_left = -760.0
+offset_top = -16.0
+offset_right = -166.0
+offset_bottom = 261.0
+scale = Vector2(1.28002, 1.28002)
+theme_override_colors/font_color = Color(0.980392, 0.996078, 1, 1)
+theme_override_fonts/font = ExtResource("5_nu6fm")
+theme_override_font_sizes/font_size = 65
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="MainMenu" type="Node2D" parent="Buttons"]
+position = Vector2(-991, 716)
+scale = Vector2(0.5, 0.5)
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/MainMenu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -761.0
+offset_right = 1.0
+offset_bottom = 112.0
+grow_horizontal = 2
+toggle_mode = true
+texture_normal = ExtResource("1_tnch1")
+texture_pressed = ExtResource("2_qgddc")
+texture_hover = ExtResource("3_0j88f")
+
+[node name="Label" type="Label" parent="Buttons/MainMenu"]
+offset_left = -760.0
+offset_top = -14.0
+offset_right = -166.0
+offset_bottom = 263.0
+scale = Vector2(1.28002, 1.28002)
+theme_override_colors/font_color = Color(0.980392, 0.996078, 1, 1)
+theme_override_fonts/font = ExtResource("5_nu6fm")
+theme_override_font_sizes/font_size = 65
+text = "MAIN MENU
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -238.0
+offset_top = 35.0
+offset_right = 222.0
+offset_bottom = 245.833
+grow_horizontal = 2
+scale = Vector2(0.811888, 0.811888)
+theme_override_colors/font_color = Color(0.95, 0.95, 0.9215, 1)
+theme_override_colors/font_shadow_color = Color(0.13, 0.126707, 0.1053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -15
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("5_0j88f")
+theme_override_font_sizes/font_size = 160
+text = "Paused"
+
+[node name="Settings Tab" parent="." instance=ExtResource("6_gym5s")]
+visible = false
+
+[connection signal="pressed" from="Buttons/Resume/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Buttons/Restart/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Buttons/Settings/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Buttons/MainMenu/TextureButton" to="." method="_on_texture_button_pressed"]

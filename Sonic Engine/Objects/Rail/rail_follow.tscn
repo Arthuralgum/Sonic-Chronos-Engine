@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://di1v2s7dfxt0i"]
+
+[ext_resource type="Script" uid="uid://bvavyog0uspvi" path="res://Objects/Rail/rail_follow_script.gd" id="1_x1fue"]
+[ext_resource type="Texture2D" uid="uid://dw7bo3lf3npfp" path="res://Assets/System/Homing Attack sprite.png" id="2_acb03"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nq8ym"]
+radius = 24.0
+height = 76.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8x2e6"]
+radius = 144.17
+
+[node name="RailFollow" type="PathFollow2D"]
+position = Vector2(-14759, -1813)
+loop = false
+script = ExtResource("1_x1fue")
+rail_speed = 20.0
+
+[node name="AimSprite" type="Sprite2D" parent="."]
+position = Vector2(0.999914, 0.0050087)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_acb03")
+region_enabled = true
+region_rect = Rect2(359, 0, 361, 360)
+
+[node name="activate_rail" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="activate_rail"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nq8ym")
+
+[node name="HomingAttck" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomingAttck"]
+shape = SubResource("CircleShape2D_8x2e6")
+
+[node name="RailRemote" type="RemoteTransform2D" parent="."]
+
+[connection signal="body_entered" from="activate_rail" to="." method="_on_activate_rail_body_entered"]
+[connection signal="body_entered" from="HomingAttck" to="." method="_on_homing_attck_body_entered"]
+[connection signal="body_exited" from="HomingAttck" to="." method="_on_homing_attck_body_exited"]
