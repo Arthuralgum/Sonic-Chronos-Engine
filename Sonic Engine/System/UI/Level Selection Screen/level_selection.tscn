@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4i607mpww0jr"]
+
+[ext_resource type="Script" uid="uid://brl1kr0ck7wr3" path="res://System/UI/Level Selection Screen/level_slot.gd" id="1_hy0rl"]
+[ext_resource type="FontFile" uid="uid://b8qirfs8s4325" path="res://Assets/System/Fonts/Ultra Force.otf" id="2_fkiiq"]
+[ext_resource type="Texture2D" uid="uid://s4qqd8cqfcmg" path="res://Assets/Levels/Metal Harbor/MH thumb.png" id="3_pgj5p"]
+[ext_resource type="AudioStream" uid="uid://cs5d1qujil450" path="res://Assets/System/UI/Level Selection Screen/MH_menu.wav" id="4_rfy5b"]
+
+[node name="LevelSlot" type="MarginContainer" node_paths=PackedStringArray("level_slot_sprite", "level_label", "level_audio")]
+offset_left = 520.0
+offset_top = 253.0
+offset_right = 710.0
+offset_bottom = 253.0
+size_flags_horizontal = 4
+theme_override_constants/margin_left = -15
+theme_override_constants/margin_top = -220
+theme_override_constants/margin_right = -50
+script = ExtResource("1_hy0rl")
+level_path = "res://Levels/Metal Harbor/MH V1.tscn"
+level_slot_sprite = NodePath("LevelSprite")
+level_label = NodePath("LevelTitle")
+level_audio = NodePath("LevelAudio")
+
+[node name="LevelTitle" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.75, 0.364875, 0.1575, 1)
+theme_override_colors/font_outline_color = Color(0.1125, 0.356875, 0.75, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("2_fkiiq")
+theme_override_font_sizes/font_size = 60
+text = "METAL HARBOR"
+
+[node name="LevelSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(112, 80)
+scale = Vector2(0.15, 0.168)
+texture = ExtResource("3_pgj5p")
+region_enabled = true
+region_rect = Rect2(935.75, 0, 1352.71, 1858)
+
+[node name="LevelAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rfy5b")
+volume_db = -20.0

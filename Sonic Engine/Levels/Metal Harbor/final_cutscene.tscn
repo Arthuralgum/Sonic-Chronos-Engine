@@ -7,8 +7,8 @@
 [ext_resource type="FontFile" uid="uid://dcx66fsva2smj" path="res://Assets/System/Fonts/Font.ttf" id="5_e1qwv"]
 [ext_resource type="Texture2D" uid="uid://ba6a2y87v6fhv" path="res://Assets/Levels/Metal Harbor/Cutscenes/Tails.png" id="5_g2cki"]
 [ext_resource type="Script" uid="uid://dcmjf8b1vgaix" path="res://System/UI/HUD/HUD.gd" id="5_ywscb"]
-[ext_resource type="Script" uid="uid://cbg1t41xxtj0d" path="res://System/UI/HUD/Time_Count.gd" id="6_el5dq"]
 [ext_resource type="Texture2D" uid="uid://2wpjjtyrj4n4" path="res://Assets/Levels/Metal Harbor/Cutscenes/Explosion_Sheet.png" id="6_hxvnp"]
+[ext_resource type="Script" uid="uid://c36hk0g1lo0q6" path="res://Levels/Metal Harbor/Time_Final_cutscene.gd" id="6_ywscb"]
 [ext_resource type="Texture2D" uid="uid://301o547ygd0k" path="res://Assets/Levels/Metal Harbor/Bg/Ocean.png" id="7_j4531"]
 [ext_resource type="Script" uid="uid://cne8jptigqj0f" path="res://Levels/Metal Harbor/bg_cutscene.gd" id="8_fajyj"]
 
@@ -840,11 +840,12 @@ offset_bottom = -166.0
 script = ExtResource("5_ywscb")
 
 [node name="Time" type="Panel" parent="Sonic/Results"]
+layout_mode = 0
 offset_left = -267.0
 offset_top = 35.0
 offset_right = -267.0
 offset_bottom = 35.0
-script = ExtResource("6_el5dq")
+script = ExtResource("6_ywscb")
 
 [node name="TIME(ms)" type="Label" parent="Sonic/Results/Time"]
 layout_mode = 1

@@ -12,7 +12,7 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	total_time += delta
+	total_time = Global.total_time
 	m = fmod(total_time, 3600) / 60
 	s = fmod(total_time, 60)
 	ms = fmod(total_time, 1) * 100
@@ -22,4 +22,5 @@ func _process(delta: float) -> void:
 	else:
 		time_s_.text= str(s) + "''"
 	time_ms_.text= str(ms)
-	Global.total_time = total_time
+	$"../SCORE".text = "SCORE " + str(Global.Cutscene_score)
+	$"../RINGS".text = "RINGS " + str(Global.Cutscene_ring)

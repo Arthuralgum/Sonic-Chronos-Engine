@@ -22,6 +22,8 @@ func _on_collision_body_entered(body: Node2D) -> void:
 		Global.CouldHomeattack = false
 		$Fade.show()
 		await get_tree().create_timer(1.0).timeout
+		Global.Cutscene_ring = Global.Rings
+		Global.Cutscene_score = Global.Score
 		System.ExitStageTo("res://Levels/Metal Harbor/final_cutscene.tscn")
 		
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://b5evi0ci2bmkk"]
+[gd_scene load_steps=91 format=3 uid="uid://b5evi0ci2bmkk"]
 
 [ext_resource type="Script" uid="uid://c6ct5u6qxcip3" path="res://System/UI/Character Selection Screen/Character Selection Screen.gd" id="1_m0mio"]
 [ext_resource type="Texture2D" uid="uid://dlbev3g3ib8qt" path="res://Assets/System/UI/Character Selection Screen/Character select frame.png" id="2_hq78s"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dianfgf4c6w6" path="res://Assets/System/Sonic Chronos Engine.png" id="9_ws7dm"]
 [ext_resource type="PackedScene" uid="uid://dccxq1kjmbwcp" path="res://System/UI/Fade_transition.tscn" id="10_b7ran"]
 [ext_resource type="AudioStream" uid="uid://jk6eaamvkbix" path="res://Assets/System/UI/Level Selection Screen/Menu Select.wav" id="10_yf8iq"]
+[ext_resource type="PackedScene" uid="uid://cb4ol40y8c3rs" path="res://System/UI/Setting Menu/settings_tab.tscn" id="13_r8ase"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xghjt"]
 texture = ExtResource("2_hq78s")
@@ -713,7 +714,7 @@ polygon = PackedVector2Array(54, 28, 45, 21, 50, 28)
 
 [node name="Menu Arrow" type="AudioStreamPlayer" parent="VBoxContainer/HBoxContainer/Character 2"]
 stream = ExtResource("7_s3o2m")
-volume_db = -20.0
+volume_db = -40.0
 
 [node name="Character 3" type="MarginContainer" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("char_slot_animation")]
 layout_mode = 2
@@ -752,7 +753,8 @@ stretch_mode = 2
 
 [node name="Menu Select" type="AudioStreamPlayer" parent="VBoxContainer/MarginContainer2"]
 stream = ExtResource("10_yf8iq")
-volume_db = -20.0
+volume_db = -40.0
+bus = &"SFX"
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -769,5 +771,9 @@ layout_mode = 1
 
 [node name="Fade_timer" type="Timer" parent="Fade_effect"]
 wait_time = 0.65
+
+[node name="Settings Tab" parent="." instance=ExtResource("13_r8ase")]
+visible = false
+layout_mode = 1
 
 [connection signal="timeout" from="Fade_effect/Fade_timer" to="." method="_on_fade_timer_timeout"]

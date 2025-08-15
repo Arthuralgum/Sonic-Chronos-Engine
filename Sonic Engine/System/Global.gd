@@ -25,6 +25,9 @@ var player_take_damage: bool = false
 var Rings: int = 0
 var Score: int = 0
 var Energy: float = 0.0
+var total_time:float = 0.0
+var Cutscene_ring: int = 0.0
+var Cutscene_score: int = 0.0
 
 #Physics elements
 var null_head_stopper: bool = false

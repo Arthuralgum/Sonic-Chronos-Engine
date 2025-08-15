@@ -3228,7 +3228,7 @@ SpringJumpForce = 1600.0
 
 [node name="Spring Jump5" parent="Objects/Speed Objects" instance=ExtResource("9_fbit4")]
 z_index = -1
-position = Vector2(85825, -18083)
+position = Vector2(85841, -18083)
 rotation = 1.16865
 scale = Vector2(1.5, 1.5)
 SpringJumpForce = 1500.0
@@ -6272,7 +6272,7 @@ wait_time = 0.3
 
 [node name="EGG_FLEET_SoundTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_kmexu")
-volume_db = -80.0
+volume_db = -40.0
 bus = &"Music"
 parameters/looping = true
 
@@ -6331,7 +6331,7 @@ intro_time = 2.0
 visible = false
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
-position = Vector2(-23271, -4215)
+position = Vector2(-23188, -4238)
 
 [node name="Node2D" parent="." instance=ExtResource("44_cvm7u")]
 z_index = -1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://doejuhkeem6qa"]
+[gd_scene load_steps=20 format=3 uid="uid://doejuhkeem6qa"]
 
 [ext_resource type="Texture2D" uid="uid://dianfgf4c6w6" path="res://Assets/System/Sonic Chronos Engine.png" id="1_6wa0t"]
 [ext_resource type="Script" uid="uid://bbj6ljloj0xfi" path="res://System/UI/Level Selection Screen/level_selection_screen.gd" id="1_fn703"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://6s1sa12muew8" path="res://Assets/System/UI/Options(Normal).png" id="15_4yrmm"]
 [ext_resource type="Texture2D" uid="uid://c4jniavs7l51h" path="res://Assets/System/UI/Options(Pressedl).png" id="16_e7h0k"]
 [ext_resource type="Texture2D" uid="uid://bqbk3j0mmcpya" path="res://Assets/System/UI/Options.png" id="17_t0ns0"]
+[ext_resource type="PackedScene" uid="uid://cb4ol40y8c3rs" path="res://System/UI/Setting Menu/settings_tab.tscn" id="19_e7h0k"]
 
 [node name="Level Selection Screen" type="Control"]
 layout_mode = 3
@@ -148,11 +149,13 @@ polygon = PackedVector2Array(54, 28, 45, 21, 50, 28)
 
 [node name="Level_audio" type="AudioStreamPlayer" parent="LevelSlot2"]
 stream = ExtResource("8_y6eb5")
-volume_db = -20.0
+volume_db = -45.0
+bus = &"Music"
 
 [node name="Menu Arrow" type="AudioStreamPlayer" parent="LevelSlot2"]
 stream = ExtResource("9_7bo41")
-volume_db = -20.0
+volume_db = -40.0
+bus = &"SFX"
 
 [node name="Soon" type="MarginContainer" parent="." node_paths=PackedStringArray("level_slot_sprite", "level_label")]
 layout_mode = 2
@@ -233,11 +236,11 @@ stretch_mode = 2
 
 [node name="Menu Select" type="AudioStreamPlayer" parent="VBoxContainer/MarginContainer2"]
 stream = ExtResource("11_ne1as")
-volume_db = -20.0
+volume_db = -40.0
 
 [node name="Menu Exit" type="AudioStreamPlayer" parent="VBoxContainer/MarginContainer2"]
 stream = ExtResource("12_3vhm7")
-volume_db = -10.0
+volume_db = -20.0
 
 [node name="Slot0_Marker" type="Marker2D" parent="."]
 position = Vector2(-172, 281)
@@ -302,6 +305,10 @@ mouse_filter = 2
 
 [node name="Fade_timer" type="Timer" parent="Fade_effect"]
 wait_time = 0.5
+
+[node name="Settings Tab" parent="." instance=ExtResource("19_e7h0k")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="Preset Selection Screen/Confirm2" to="." method="_on_confirm_2_pressed"]
 [connection signal="timeout" from="Fade_effect/Fade_timer" to="." method="_on_fade_timer_timeout"]

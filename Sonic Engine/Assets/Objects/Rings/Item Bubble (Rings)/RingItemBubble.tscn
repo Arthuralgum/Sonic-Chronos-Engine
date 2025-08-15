@@ -39,7 +39,7 @@ region_rect = Rect2(361, 0, 359, 360)
 
 [node name="Sound Effect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_hhmh7")
-volume_db = -40.0
+volume_db = -20.0
 bus = &"SFX"
 
 [connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]
