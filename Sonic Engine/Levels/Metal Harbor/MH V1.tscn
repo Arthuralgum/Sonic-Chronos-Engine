@@ -2504,20 +2504,19 @@ scale = Vector2(2, 2)
 dash_pad_intensity = 1200.0
 
 [node name="DashPanel8" parent="Objects/Speed Objects/Dash_pods" instance=ExtResource("7_7b7ky")]
-position = Vector2(2222.1, -391.3)
-rotation = 0.247074
+position = Vector2(2245, -274)
 
 [node name="DashPanel10" parent="Objects/Speed Objects/Dash_pods" instance=ExtResource("7_7b7ky")]
 position = Vector2(2442.1, -89.3)
 rotation = -3.14159
 
-[node name="DashPanel9" parent="Objects/Speed Objects/Dash_pods" instance=ExtResource("7_7b7ky")]
-position = Vector2(2382.1, -1053.3)
-rotation = 0.585607
-
 [node name="DashPanel11" parent="Objects/Speed Objects/Dash_pods" instance=ExtResource("7_7b7ky")]
-position = Vector2(2228.1, -832.3)
-rotation = 0.585607
+position = Vector2(2277, -894)
+rotation = 0.63879
+
+[node name="DashPanel18" parent="Objects/Speed Objects/Dash_pods" instance=ExtResource("7_7b7ky")]
+position = Vector2(2443, -938)
+rotation = 3.14159
 
 [node name="DashPanel12" parent="Objects/Speed Objects/Dash_pods" instance=ExtResource("7_7b7ky")]
 position = Vector2(14582.9, 249)
@@ -6266,7 +6265,7 @@ shape = SubResource("RectangleShape2D_kmexu")
 script = ExtResource("18_6r7d3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Extra/System/KillZone"]
-polygon = PackedVector2Array(-25551, 5, -9362, 8, -9298, 2096, -9299, 3181, 45002, 3185, 47685, 3148, 47685, 5831, -9448, 5494, -10899, 5483, -10946, 606, -25635, 629)
+polygon = PackedVector2Array(-25551, 5, -9362, 8, -9298, 2096, -9299, 3181, 45002, 3185, 47514, 2805, 47554, -11075, 138599, -11996, 138643, -10832, 51025, -8795, 50703, 5700, 47685, 5831, -9448, 5494, -10899, 5483, -10946, 606, -25635, 629)
 
 [node name="Timer" type="Timer" parent="Extra/System/KillZone"]
 wait_time = 0.3

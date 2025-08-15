@@ -60,7 +60,6 @@ func player_exit_motion():
 			player.motion = Vector2(-rail_velocity,0.0).rotated(rail_path_follow.rotation)
 		else:
 			player.motion = Vector2(rail_velocity,0.0).rotated(rail_path_follow.rotation)
-	print(rail_path_follow.rotation)
 func apply_rail_motion(delta: float):
 	if Global.ExitedRail:
 		return
@@ -100,7 +99,6 @@ func _process(delta: float) -> void:
 			if !Global.ExitedRail:
 				apply_rail_motion(delta)
 			if (player.last_facing_direction == Vector2.LEFT and rail_path_follow.progress_ratio == 0) or (player.last_facing_direction == Vector2.RIGHT and rail_path_follow.progress_ratio == 1.0) or Input.is_action_just_pressed("jump"):
-				print(Global.CanRail)
 				Global.ExitedRail = true
 				player_exit_motion()
 				await get_tree().create_timer(0.20).timeout

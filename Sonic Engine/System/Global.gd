@@ -79,11 +79,9 @@ func get_closest_enemy(pos: Vector2) -> Node2D:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print("entrou")
 		Global.physics_state = Global.gameplay_state.wall_movement
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is Player:
-		print("saiu")
 		Global.physics_state = Global.gameplay_state.physics

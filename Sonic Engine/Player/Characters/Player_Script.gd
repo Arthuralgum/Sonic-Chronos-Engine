@@ -123,7 +123,7 @@ var spindash_lock: bool
 var peelout_lock: bool
 var dropdash_lock: bool
 var bounce_lock: bool
-var homming_attack_lock: bool
+var homing_attack_lock: bool
 var boost_lock: bool
 
 var preset_path := "user://preset_data"
@@ -147,7 +147,7 @@ func apply_preset_settings(preset_name: String):
 	peelout_lock = data.get("peelout", false)
 	dropdash_lock = data.get("dropdash", false)
 	bounce_lock = data.get("bounce", false)
-	homming_attack_lock = data.get("homming_attack", false)
+	homing_attack_lock = data.get("homing_attack", false)
 	boost_lock = data.get("boost", false)
 	topspeed = data.get("topspeed", 1200)
 	acc = data.get("acceleration", 2)

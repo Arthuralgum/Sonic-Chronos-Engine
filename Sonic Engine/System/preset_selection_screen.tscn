@@ -233,7 +233,7 @@ offset_top = 500.0
 offset_right = -480.0
 offset_bottom = 569.0
 theme_override_font_sizes/font_size = 50
-text = "Homming Attack:"
+text = "Homing Attack:"
 
 [node name="Boost" type="Label" parent="Configs"]
 layout_mode = 0

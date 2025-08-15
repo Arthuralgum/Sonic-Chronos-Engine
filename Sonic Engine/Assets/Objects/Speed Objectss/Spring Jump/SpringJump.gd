@@ -13,7 +13,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Global.IsSpringJumping:
 		var player = Global.player_node
-		print(player.motion)
 func _on_detection_area_body_entered(body: Player) -> void:
 	Global.EnemyPostitions.append(SpringNode)
 	AimSprite.hide()
@@ -23,8 +22,6 @@ func _on_detection_area_body_entered(body: Player) -> void:
 	var player = Global.player_node
 	player.position += Vector2(0.0,-50).rotated(rotation)
 	player.motion = Vector2(0.0,-SpringJumpForce).rotated(rotation)
-	#Global.boost_ring_motion.emit(get_global_transform().y * -SpringJumpForce)
-	#print(get_global_transform().y * SpringJumpForce)
 	SpringSprite.play("Spring")
 	$AudioStreamPlayer2D.play()
 

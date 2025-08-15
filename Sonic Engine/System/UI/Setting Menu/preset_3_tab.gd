@@ -40,7 +40,7 @@ func read_preset_from_ui(preset_name: String):
 		"peelout": tab_path.get_node("HBoxContainer/CheckButton2").button_pressed,
 		"dropdash": tab_path.get_node("HBoxContainer/CheckButton3").button_pressed,
 		"bounce": tab_path.get_node("HBoxContainer2/CheckButton").button_pressed,
-		"homming_attack": tab_path.get_node("HBoxContainer2/CheckButton2").button_pressed,
+		"homing_attack": tab_path.get_node("HBoxContainer2/CheckButton2").button_pressed,
 		"boost": tab_path.get_node("CheckButton").button_pressed,
 		"topspeed": tab_path.get_node("HBoxContainer4/HBoxContainer3/SpinBox").value,
 		"acceleration": tab_path.get_node("HBoxContainer4/HBoxContainer/SpinBox").value,
@@ -58,7 +58,7 @@ func apply_preset_ui(preset_name: String):
 	tab_path.get_node("HBoxContainer/CheckButton2").button_pressed = data.get("peelout", false)
 	tab_path.get_node("HBoxContainer/CheckButton3").button_pressed = data.get("dropdash", false)
 	tab_path.get_node("HBoxContainer2/CheckButton").button_pressed = data.get("bounce", false)
-	tab_path.get_node("HBoxContainer2/CheckButton2").button_pressed = data.get("homming_attack", false)
+	tab_path.get_node("HBoxContainer2/CheckButton2").button_pressed = data.get("homing_attack", false)
 	tab_path.get_node("CheckButton").button_pressed = data.get("boost", false)
 	tab_path.get_node("HBoxContainer4/HBoxContainer3/SpinBox").value = data.get("topspeed", 1200)
 	tab_path.get_node("HBoxContainer4/HBoxContainer/SpinBox").value = data.get("acceleration", 2)

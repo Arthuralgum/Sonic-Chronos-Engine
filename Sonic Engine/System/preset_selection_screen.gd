@@ -87,8 +87,8 @@ func apply_preset_ui(preset_name: String):
 		$Configs/BounceCheck.play("True")
 	else:
 		$Configs/BounceCheck.play("False")
-	var homming_attack_flag :bool = data.get("homming_attack", false)
-	if homming_attack_flag == true:
+	var homing_attack_flag :bool = data.get("homing_attack", false)
+	if homing_attack_flag == true:
 		$Configs/HommingAttackCheck.play("True")
 	else:
 		$Configs/HommingAttackCheck.play("False")

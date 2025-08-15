@@ -168,6 +168,7 @@ theme_override_font_sizes/font_size = 50
 text = "Audio"
 
 [node name="Panel" type="Panel" parent="Audio"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -1.259
@@ -654,7 +655,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 theme_override_font_sizes/font_size = 40
 theme_override_constants/check_v_offset = 5
-text = "Homming Attack: "
+text = "Homing Attack: "
 
 [node name="Label3" type="Label" parent="Gameplay/Panel/Preset1/Preset1Tab/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -868,7 +869,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 theme_override_font_sizes/font_size = 40
 theme_override_constants/check_v_offset = 5
-text = "Homming Attack: "
+text = "Homing Attack: "
 
 [node name="Label3" type="Label" parent="Gameplay/Panel/Preset2/Preset2Tab/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -1082,7 +1083,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 theme_override_font_sizes/font_size = 40
 theme_override_constants/check_v_offset = 5
-text = "Homming Attack: "
+text = "Homing Attack: "
 
 [node name="Label3" type="Label" parent="Gameplay/Panel/Preset3/Preset3Tab/ScrollContainer/VBoxContainer"]
 layout_mode = 2
