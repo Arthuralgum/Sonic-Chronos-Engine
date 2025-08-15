@@ -1047,14 +1047,6 @@ polygon = PackedVector2Array(5877, 554, 5876, 147, 5861, 147, 5864, 554)
 position = Vector2(6108, 262.95)
 shape = SubResource("RectangleShape2D_t3xcq")
 
-[node name="Turning Point" type="Area2D" parent="Collisions/Start 1/Loop2"]
-position = Vector2(-28406, -4082.45)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/Start 1/Loop2/Turning Point"]
-position = Vector2(7.0918, -203.123)
-scale = Vector2(0.999985, 1.27819)
-polygon = PackedVector2Array(6001, 280, 6001, 433, 6009, 433, 6009, 280)
-
 [node name="Dash_Pad11" parent="Collisions/Start 1" instance=ExtResource("6_dnhlc")]
 z_index = 1
 position = Vector2(-23100, -4121)
@@ -1097,7 +1089,11 @@ position = Vector2(-1336, -656)
 polygon = PackedVector2Array(-9028, -1905, -9027, -1949, -9018, -1976, -9005, -2003, -8985, -2023, -8947, -2043, -8930, -2048, -8890, -2048, -8232, -2048, -8212, -2042, -8183, -2030, -8152, -2002, -8139, -1983, -8133, -1966, -8128, -1944, -8126, -1905, -8120, -1866, -8155, -1822, -8168, -1858, -8171, -1927, -8186, -1968, -8201, -1985, -8217, -1995, -8236, -2006, -8267, -2011, -8888, -2010, -8923, -2008, -8937, -2004, -8953, -1992, -8976, -1970, -8990, -1912, -8990, -1905)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collisions/Part1/StaticBody3"]
-polygon = PackedVector2Array(-8538, -2451, -8539, -3364, -8594, -3365, -8594, -3385, -8538, -3384, -8539, -4675, -8497, -4690, -8497, -1875, -8537, -1876)
+polygon = PackedVector2Array(-8538, -2451, -8534, -3005, -8594, -3007, -8594, -3055, -8496, -3055, -8497, -2997, -8497, -1875, -8537, -1876)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Collisions/Part1/StaticBody3"]
+position = Vector2(640, 607)
+polygon = PackedVector2Array(-8143, -1857, -8142, -1895, -8547, -1895, -8547, -1857)
 
 [node name="AlternateUP" type="Node" parent="Collisions"]
 
@@ -2741,7 +2737,7 @@ rotation = 1.5708
 [node name="DashPanel101" parent="Objects/Speed Objects/Dash_pods" instance=ExtResource("7_7b7ky")]
 position = Vector2(-8035, -4032)
 rotation = 3.14159
-dash_panel_intensity = -300.0
+dash_panel_intensity = -500.0
 
 [node name="DashPanel62" parent="Objects/Speed Objects/Dash_pods" instance=ExtResource("7_7b7ky")]
 position = Vector2(9845.9, -1269.1)
@@ -6277,13 +6273,15 @@ wait_time = 0.3
 
 [node name="EGG_FLEET_SoundTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_kmexu")
-volume_db = -15.0
+volume_db = -80.0
+bus = &"Music"
 parameters/looping = true
 
 [node name="MH_SoundTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_dycrs")
-volume_db = -20.0
+volume_db = -40.0
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -6334,7 +6332,7 @@ intro_time = 2.0
 visible = false
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
-position = Vector2(122921, -18806)
+position = Vector2(-23271, -4215)
 
 [node name="Node2D" parent="." instance=ExtResource("44_cvm7u")]
 z_index = -1
@@ -6435,25 +6433,24 @@ position = Vector2(-2069, -1167)
 z_index = -1
 position = Vector2(-1648, -1582)
 
-[node name="Golden Beetle" parent="." instance=ExtResource("45_youn4")]
+[node name="Golden Beetle" parent="Enemies" instance=ExtResource("45_youn4")]
 z_index = -1
-position = Vector2(120601, -18846)
+position = Vector2(120700, -18851)
 
-[node name="Golden Beetle2" parent="." instance=ExtResource("45_youn4")]
+[node name="Golden Beetle2" parent="Enemies" instance=ExtResource("45_youn4")]
 z_index = -1
-position = Vector2(61571, -18001)
+position = Vector2(61670, -18006)
 
-[node name="Golden Beetle3" parent="." instance=ExtResource("45_youn4")]
+[node name="Golden Beetle3" parent="Enemies" instance=ExtResource("45_youn4")]
 z_index = -1
-position = Vector2(84183, -21816)
+position = Vector2(84282, -21821)
 
-[node name="Golden Beetle4" parent="." instance=ExtResource("45_youn4")]
+[node name="Golden Beetle4" parent="Enemies" instance=ExtResource("45_youn4")]
 z_index = -1
-position = Vector2(37363, 1014)
+position = Vector2(37462, 1009)
 
 [connection signal="body_entered" from="Collisions/Start 1/Loop2/Start Right" to="." method="_on_right_to_left_body_entered"]
 [connection signal="body_entered" from="Collisions/Start 1/Loop2/Start Left" to="." method="_on_left_to_right_body_entered"]
-[connection signal="body_entered" from="Collisions/Start 1/Loop2/Turning Point" to="." method="_on_middle_point_body_entered"]
 [connection signal="body_entered" from="Collisions/AlternateUP/Area2D" to="." method="_on_change_up_body_entered"]
 [connection signal="body_entered" from="Collisions/AlternateUP/Area2D2" to="." method="_on_change_up_body_entered"]
 [connection signal="body_entered" from="Collisions/AlternateUP/Area2D5" to="." method="_on_change_up_body_entered"]

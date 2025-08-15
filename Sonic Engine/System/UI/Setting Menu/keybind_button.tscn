@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b8u66axmyi77y"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(1250, 50)
+anchors_preset = -1
+offset_left = 123.0
+offset_right = 1123.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="LabelAction" type="Label" parent="."]
+offset_left = 42.0
+offset_top = 2.0
+offset_right = 283.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 30
+text = "UP:"
+
+[node name="LabelInput" type="Label" parent="."]
+offset_left = 302.0
+offset_top = 2.0
+offset_right = 543.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 30
+text = "W"

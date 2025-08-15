@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cb4ol40y8c3rs"]
+[gd_scene load_steps=17 format=3 uid="uid://cb4ol40y8c3rs"]
 
 [ext_resource type="FontFile" uid="uid://bipbksms2o5x7" path="res://Assets/System/Fonts/Obised.ttf" id="1_6rg0q"]
 [ext_resource type="Script" uid="uid://wjoqikjjnilf" path="res://System/UI/Setting Menu/settings_tab.gd" id="1_a1iti"]
@@ -11,7 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://b30kxv6w5et5h" path="res://Assets/System/UI/OptionsCheck(Normal).png" id="7_ueidx"]
 [ext_resource type="Texture2D" uid="uid://d0wt3ddf4ituj" path="res://Assets/System/UI/OptionsCheck(Pressed).png" id="8_2lcdq"]
 [ext_resource type="ButtonGroup" uid="uid://d0hle8agn45f2" path="res://System/UI/Setting Menu/Gameplay_Tab.tres" id="8_6squl"]
+[ext_resource type="Script" uid="uid://d1je6yw1ucunh" path="res://System/UI/Setting Menu/Audio_panel.gd" id="8_dvpaj"]
+[ext_resource type="Script" uid="uid://bmqhmyu8wgfcm" path="res://System/UI/Setting Menu/controls.gd" id="8_epfxw"]
 [ext_resource type="Texture2D" uid="uid://vnowt2nqi3dv" path="res://Assets/System/UI/OptionsCheck(Hovered).png" id="9_3ey0a"]
+[ext_resource type="PackedScene" uid="uid://b8u66axmyi77y" path="res://System/UI/Setting Menu/keybind_button.tscn" id="9_uuqvt"]
 [ext_resource type="Script" uid="uid://bi86q2rscgk8p" path="res://System/UI/Setting Menu/preset_3_tab.gd" id="15_dvpaj"]
 
 [node name="Settings Tab" type="Control"]
@@ -165,7 +168,6 @@ theme_override_font_sizes/font_size = 50
 text = "Audio"
 
 [node name="Panel" type="Panel" parent="Audio"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -1.259
@@ -194,6 +196,8 @@ grow_horizontal = 2
 grow_vertical = 2
 value = 50.0
 rounded = true
+script = ExtResource("8_dvpaj")
+Bus_name = "Master"
 
 [node name="Label" type="Label" parent="Audio/Panel/HSlider"]
 layout_mode = 0
@@ -229,6 +233,8 @@ grow_horizontal = 2
 grow_vertical = 2
 value = 50.0
 rounded = true
+script = ExtResource("8_dvpaj")
+Bus_name = "Music"
 
 [node name="Label" type="Label" parent="Audio/Panel/HSlider2"]
 layout_mode = 0
@@ -264,6 +270,8 @@ grow_horizontal = 2
 grow_vertical = 2
 value = 50.0
 rounded = true
+script = ExtResource("8_dvpaj")
+Bus_name = "SFX"
 
 [node name="Label" type="Label" parent="Audio/Panel/HSlider3"]
 layout_mode = 0
@@ -321,12 +329,13 @@ offset_right = 0.0249634
 offset_bottom = 0.0319824
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_epfxw")
 
-[node name="KeyBinds" type="Label" parent="Controls/Panel"]
+[node name="Title" type="Label" parent="Controls/Panel"]
 layout_mode = 0
 offset_left = 518.0
 offset_top = 33.0
-offset_right = 759.0
+offset_right = 773.0
 offset_bottom = 102.0
 theme_override_font_sizes/font_size = 50
 text = "KEYBINDS:"
@@ -336,86 +345,65 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Up" type="Label" parent="Controls/Panel/Keys"]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 113.0
-offset_right = 293.0
-offset_bottom = 182.0
-theme_override_font_sizes/font_size = 30
-text = "UP:"
+[node name="ScrollContainer" type="ScrollContainer" parent="Controls/Panel/Keys"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 31.975
+anchor_bottom = 14.25
+offset_top = 132.0
+offset_right = -0.00012207
+offset_bottom = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Down" type="Label" parent="Controls/Panel/Keys"]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 173.0
-offset_right = 293.0
-offset_bottom = 242.0
-theme_override_font_sizes/font_size = 30
-text = "Down:"
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls/Panel/Keys/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="Left" type="Label" parent="Controls/Panel/Keys"]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 233.0
-offset_right = 293.0
-offset_bottom = 302.0
-theme_override_font_sizes/font_size = 30
-text = "Left:"
+[node name="Separator" type="Control" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer"]
+layout_mode = 2
 
-[node name="Right" type="Label" parent="Controls/Panel/Keys"]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 293.0
-offset_right = 293.0
-offset_bottom = 362.0
-theme_override_font_sizes/font_size = 30
-text = "Right:"
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
 
-[node name="Action 1" type="Label" parent="Controls/Panel/Keys"]
-layout_mode = 0
-offset_left = 352.0
-offset_top = 113.0
-offset_right = 593.0
-offset_bottom = 182.0
-theme_override_font_sizes/font_size = 30
-text = "Action1:"
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="Action 2" type="Label" parent="Controls/Panel/Keys"]
-layout_mode = 0
-offset_left = 352.0
-offset_top = 173.0
-offset_right = 593.0
-offset_bottom = 242.0
-theme_override_font_sizes/font_size = 30
-text = "Action2:"
+[node name="Button" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer/VBoxContainer" instance=ExtResource("9_uuqvt")]
+layout_mode = 2
 
-[node name="Cancel" type="Label" parent="Controls/Panel/Keys"]
-layout_mode = 0
-offset_left = 352.0
-offset_top = 232.0
-offset_right = 658.0
-offset_bottom = 301.0
-theme_override_font_sizes/font_size = 30
-text = "Cancel (also Bounce):"
+[node name="Button10" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer/VBoxContainer" instance=ExtResource("9_uuqvt")]
+layout_mode = 2
 
-[node name="Secondary1" type="Label" parent="Controls/Panel/Keys"]
-layout_mode = 0
-offset_left = 852.0
-offset_top = 112.0
-offset_right = 1158.0
-offset_bottom = 181.0
-theme_override_font_sizes/font_size = 30
-text = "Secondary1:"
+[node name="Button11" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer/VBoxContainer" instance=ExtResource("9_uuqvt")]
+layout_mode = 2
 
-[node name="Secondary2" type="Label" parent="Controls/Panel/Keys"]
-layout_mode = 0
-offset_left = 852.0
-offset_top = 232.0
-offset_right = 1158.0
-offset_bottom = 301.0
-theme_override_font_sizes/font_size = 30
-text = "Secondary2:"
+[node name="Button12" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer/VBoxContainer" instance=ExtResource("9_uuqvt")]
+layout_mode = 2
+
+[node name="Button13" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer/VBoxContainer" instance=ExtResource("9_uuqvt")]
+layout_mode = 2
+
+[node name="Button14" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer/VBoxContainer" instance=ExtResource("9_uuqvt")]
+layout_mode = 2
+
+[node name="Button15" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer/VBoxContainer" instance=ExtResource("9_uuqvt")]
+layout_mode = 2
+
+[node name="Button16" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer/VBoxContainer" instance=ExtResource("9_uuqvt")]
+layout_mode = 2
+
+[node name="Button17" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer/VBoxContainer" instance=ExtResource("9_uuqvt")]
+layout_mode = 2
+
+[node name="Reset" type="Button" parent="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 60
+text = "RESET SETTINGS"
 
 [node name="Gameplay" type="TextureButton" parent="."]
 layout_mode = 1
@@ -1205,6 +1193,7 @@ texture_hover = ExtResource("9_3ey0a")
 [connection signal="toggled" from="Video" to="." method="_on_video_toggled"]
 [connection signal="toggled" from="Audio" to="." method="_on_audio_toggled"]
 [connection signal="toggled" from="Controls" to="." method="_on_controls_toggled"]
+[connection signal="pressed" from="Controls/Panel/Keys/ScrollContainer/HBoxContainer/VBoxContainer/Reset" to="Controls/Panel" method="_on_reset_pressed"]
 [connection signal="toggled" from="Gameplay" to="." method="_on_gameplay_toggled"]
 [connection signal="toggled" from="Gameplay/Panel/Default" to="." method="_on_gameplay_default_toggled"]
 [connection signal="toggled" from="Gameplay/Panel/Preset1" to="." method="_on_gameplay_preset_1_toggled"]

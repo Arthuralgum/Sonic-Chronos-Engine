@@ -1,6 +1,6 @@
 [gd_scene load_steps=135 format=3 uid="uid://t3ui41eodwn3"]
 
-[ext_resource type="Script" uid="uid://gm1drr080u8v" path="res://Player/Player_Script.gd" id="1_gk4dk"]
+[ext_resource type="Script" uid="uid://gm1drr080u8v" path="res://Player/Characters/Player_Script.gd" id="1_gk4dk"]
 [ext_resource type="Script" uid="uid://p1cutiwn0qlm" path="res://Player/Combat/light_attack.gd" id="2_e2cw3"]
 [ext_resource type="Script" uid="uid://ttimgli2l8hu" path="res://Player/Combat/heavy_attack.gd" id="3_tp4xk"]
 [ext_resource type="Script" uid="uid://b6f64xph15pli" path="res://Player/Combat/Player_hit_box.gd" id="4_6vq6e"]
