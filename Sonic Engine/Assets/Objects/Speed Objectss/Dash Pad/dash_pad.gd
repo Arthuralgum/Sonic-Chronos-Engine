@@ -7,15 +7,15 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	var player = Global.player_node
 	if body is Player:
-		var angle = rad_to_deg(rotation / TAU)
-		if sin(angle) <= 0.95 and sin(angle) >= 0.0:
-			if rotation <= PI/2:
-				player.motion = Vector2(dash_pad_intensity,0.0).rotated(rotation)
+		if abs(sin(rotation)) <= 0.95:
+			if abs(rotation) <= PI/2:
+				player.motion = Vector2(dash_pad_intensity,0.0).rotated(abs(rotation))
 			else:
-				player.motion = Vector2(-dash_pad_intensity,0.0).rotated(rotation)
-		elif sin(angle) < 0.0:
-			player.motion = Vector2(0.0,dash_pad_intensity).rotated(rotation)
+				player.motion = Vector2(-dash_pad_intensity,0.0).rotated(abs(rotation))
 		else:
-			player.motion = Vector2(0.0,-dash_pad_intensity).rotated(rotation)
+			if abs(rotation) <= PI:
+				player.motion = Vector2(0.0,-dash_pad_intensity).rotated(abs(rotation))
+			else:
+				player.motion = Vector2(0.0,dash_pad_intensity).rotated(abs(rotation))
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	active = false

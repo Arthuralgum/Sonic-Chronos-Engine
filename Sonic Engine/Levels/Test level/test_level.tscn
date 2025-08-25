@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://xp5bsn74ruua"]
+[gd_scene load_steps=17 format=3 uid="uid://xp5bsn74ruua"]
 
 [ext_resource type="Script" uid="uid://bcp7837xsamyd" path="res://Levels/Test level/test_level.gd" id="1_eccdu"]
 [ext_resource type="Script" uid="uid://b4uuj2sn2w8vg" path="res://Player/Player_Camera.gd" id="2_lshnh"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bhs56p25jd75p" path="res://Assets/Objects/Rings/Default Ring/RingDefault.tscn" id="9_up8sn"]
 [ext_resource type="PackedScene" uid="uid://cntx067epfcq" path="res://Assets/Objects/Speed Objectss/Spring Jump/spring_jump.tscn" id="10_2qikg"]
 [ext_resource type="Script" uid="uid://3dt0d8fnj5js" path="res://Objects/Rail/Rail_Hub.gd" id="11_cp1jh"]
-[ext_resource type="Script" uid="uid://c2slsst0tb0jk" path="res://Objects/Rail/rail_script.gd" id="12_mgr8j"]
 [ext_resource type="PackedScene" uid="uid://di1v2s7dfxt0i" path="res://Objects/Rail/rail_follow.tscn" id="13_xt8u4"]
 
 [sub_resource type="Curve2D" id="Curve2D_x7r4j"]
@@ -440,7 +439,6 @@ script = ExtResource("11_cp1jh")
 [node name="Rail" type="Path2D" parent="Rails"]
 position = Vector2(29131, 3098)
 curve = SubResource("Curve2D_l47dw")
-script = ExtResource("12_mgr8j")
 
 [node name="RailFollow" parent="Rails/Rail" instance=ExtResource("13_xt8u4")]
 position = Vector2(-25105, -3617)

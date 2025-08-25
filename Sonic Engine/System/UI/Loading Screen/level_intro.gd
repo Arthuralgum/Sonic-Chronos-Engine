@@ -12,7 +12,7 @@ func _ready() -> void:
 
 	$"Stage Number/Label".text = "Stage "+ stage_number + ":"
 
-	if Global.playable_char_path == "res://Player/Characters/Shadow.tscn":
+	if Global.playable_char_path == "res://Player/Characters/Shadow/Shadow.tscn":
 		$"Sonic Logo".hide()
 		shadow_logo = true
 	else:

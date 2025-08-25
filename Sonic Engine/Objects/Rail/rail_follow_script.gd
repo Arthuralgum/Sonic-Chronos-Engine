@@ -10,7 +10,7 @@ var player
 func _ready() -> void:
 	set_meta("aim", rail_aim_sprite)
 	Global.EnemyPostitions.append(rail_aim_sprite)
-	$"../../Rail_Manager".register_rail_follow(self)
+	Global.rails_positions.append(self)
 	rail_aim_sprite.hide()
 	
 func _process(delta: float) -> void:

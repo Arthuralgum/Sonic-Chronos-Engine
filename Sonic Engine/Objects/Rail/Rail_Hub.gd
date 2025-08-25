@@ -1,6 +1,6 @@
 extends Path2D
 
-var rails_follow: Array = []
+
 var last_rail_follow: Node = null
 var switch_distance_buffer := 20.0 # Adjust to taste
 var player 
@@ -9,10 +9,7 @@ var exit_rail: bool = false
 var rail_speed: float
 var rotation_factor: float
 var rail_velocity := 0.0
-
-func register_rail_follow(follow: Node):
-	if follow not in rails_follow:
-		rails_follow.append(follow)
+var player_motion: float
 
 func get_closest_rail_follow(pos: Vector2) -> Node:
 	if last_rail_follow:
@@ -23,7 +20,7 @@ func get_closest_rail_follow(pos: Vector2) -> Node:
 
 	var closest = null
 	var min_dist = INF
-	for follow in rails_follow:
+	for follow in Global.rails_positions:
 		var sprite = follow.get_meta("aim")
 		var dist = pos.distance_squared_to(sprite.global_position)
 		if dist < min_dist:
@@ -31,6 +28,19 @@ func get_closest_rail_follow(pos: Vector2) -> Node:
 			closest = follow
 	last_rail_follow = closest
 	return closest
+
+#func get_closest_rail_follow(pos: Vector2) -> Node:
+	#var closest: Node = null
+	#var min_dist = INF
+	#for rail in get_tree().get_current_scene().get_children():
+		#if rail.is_class("Path2D"):
+			#var sprite = rail.get_meta("aim")
+			#var dist = pos.distance_squared_to(sprite.global_position)
+			#if dist < min_dist:
+				#min_dist = dist
+				#closest = rail
+	#last_rail_follow = closest
+	#return closest
 	
 func reset_player_congfig():
 	player.control_lock = true
@@ -60,24 +70,25 @@ func player_exit_motion():
 			player.motion = Vector2(-rail_velocity,0.0).rotated(rail_path_follow.rotation)
 		else:
 			player.motion = Vector2(rail_velocity,0.0).rotated(rail_path_follow.rotation)
+
+func calculate_player_motion():
+	if abs(player.motion.x) >= abs(player.motion.y):
+		player_motion = abs(player.motion.x)
+	else:
+		player_motion = abs(player.motion.y)
 func apply_rail_motion(delta: float):
 	if Global.ExitedRail:
 		return
 	var slope_angle = rail_path_follow.rotation
 	var gravity_force = 500.0
 	var acceleration = gravity_force * sin(slope_angle)
-	var player_motion: float
-	rail_velocity = clamp(rail_velocity,750, 2000)
-	if abs(player.motion.x) >= abs(player.motion.y):
-		player_motion = abs(player.motion.x)
-	else:
-		player_motion = abs(player.motion.y)
 	if (acceleration >= 0 and player.last_facing_direction == Vector2.RIGHT) or (acceleration < 0 and player.last_facing_direction == Vector2.LEFT):
 		acceleration = clamp(acceleration,200.0,500.0)
 	elif (acceleration < 0 and player.last_facing_direction == Vector2.RIGHT) or (acceleration >= 0 and player.last_facing_direction == Vector2.LEFT):
 		acceleration = clamp(acceleration,-100.0,-50.0)
 	player_motion += acceleration/10
 	rail_velocity = (acceleration + player_motion)
+	rail_velocity = clamp(rail_velocity,750, 1700)
 	if player.last_facing_direction == Vector2.RIGHT:
 		rail_path_follow.progress += rail_velocity * delta
 	elif player.last_facing_direction == Vector2.LEFT:
@@ -88,7 +99,7 @@ func _process(delta: float) -> void:
 	if Global.game_over == false:
 		rail_path_follow = get_closest_rail_follow(player.global_position)
 		rail_speed = rail_path_follow.rail_speed
-		for follow in rails_follow:
+		for follow in Global.rails_positions:
 			var rail = follow.get_parent()
 			if rail and rail is Path2D:
 				var local_player_pos = rail.to_local(player.global_position)
@@ -103,4 +114,5 @@ func _process(delta: float) -> void:
 				player_exit_motion()
 				await get_tree().create_timer(0.20).timeout
 				Global.ExitedRail = false
-			
+		else:
+			calculate_player_motion()

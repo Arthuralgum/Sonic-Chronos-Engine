@@ -660,7 +660,7 @@ alignment = 1
 [node name="Character 1" type="MarginContainer" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("char_slot_animation")]
 layout_mode = 2
 script = ExtResource("4_cl0ch")
-character_path = "res://Player/Characters/Shadow.tscn"
+character_path = "res://Player/Characters/Shadow/Shadow.tscn"
 char_slot_animation = NodePath("Shadow")
 
 [node name="Shadow" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/Character 1"]
@@ -673,7 +673,7 @@ animation = &"Animation"
 [node name="Character 2" type="MarginContainer" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("char_slot_animation")]
 layout_mode = 2
 script = ExtResource("4_cl0ch")
-character_path = "res://Player/Characters/Sonic.tscn"
+character_path = "res://Player/Characters/Sonic/Sonic.tscn"
 char_slot_animation = NodePath("Sonic")
 
 [node name="Sonic" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/Character 2"]
@@ -719,7 +719,7 @@ volume_db = -40.0
 [node name="Character 3" type="MarginContainer" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("char_slot_animation")]
 layout_mode = 2
 script = ExtResource("4_cl0ch")
-character_path = "res://Player/Characters/Sonic.tscn"
+character_path = "res://Player/Characters/Neo_Metal/Neo_Metal.tscn"
 char_slot_animation = NodePath("Neo_Metal")
 
 [node name="Neo_Metal" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/Character 3"]
@@ -754,7 +754,6 @@ stretch_mode = 2
 [node name="Menu Select" type="AudioStreamPlayer" parent="VBoxContainer/MarginContainer2"]
 stream = ExtResource("10_yf8iq")
 volume_db = -40.0
-bus = &"SFX"
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1

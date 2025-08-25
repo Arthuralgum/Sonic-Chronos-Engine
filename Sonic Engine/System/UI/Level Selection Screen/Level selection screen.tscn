@@ -150,12 +150,10 @@ polygon = PackedVector2Array(54, 28, 45, 21, 50, 28)
 [node name="Level_audio" type="AudioStreamPlayer" parent="LevelSlot2"]
 stream = ExtResource("8_y6eb5")
 volume_db = -45.0
-bus = &"Music"
 
 [node name="Menu Arrow" type="AudioStreamPlayer" parent="LevelSlot2"]
 stream = ExtResource("9_7bo41")
 volume_db = -40.0
-bus = &"SFX"
 
 [node name="Soon" type="MarginContainer" parent="." node_paths=PackedStringArray("level_slot_sprite", "level_label")]
 layout_mode = 2

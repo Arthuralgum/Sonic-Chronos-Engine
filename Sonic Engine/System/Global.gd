@@ -45,13 +45,18 @@ var IsSpringJumping: bool = false
 var CanSpringJump: bool = false
 var HasSpringJump: bool = false
 signal spring_jump_motion(dash_force: Vector2)
+
 	#Dash Panels
 signal dash_panel_velocity(dash_force: Vector2)
 signal  dash_pad_velocity(dash_force: Vector2)
+
 	#Boost Rings
 signal boost_ring_motion(dash_force: Vector2)
 var exited_boost_ring: bool = false
 var boost_ring: bool = false
+
+	#Rails
+var rails_positions: Array = []
 
 #System
 
@@ -68,6 +73,7 @@ func _ready() -> void:
 	pass
 func _process(delta: float) -> void:
 	get_closest_enemy(global_position)
+
 func get_closest_enemy(pos: Vector2) -> Node2D:
 	var distsq = 99999999999999999.0 # "infinity"
 	closestEnemy = null
@@ -79,6 +85,10 @@ func get_closest_enemy(pos: Vector2) -> Node2D:
 			distsq = testd
 			closestEnemy = e
 	return closestEnemy
+
+func register_rail_follow(follow: Node):
+	if follow not in rails_positions:
+		rails_positions.append(follow)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:

@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if $".".is_visible_in_tree():
-		load_all_presets()
+		presets = System.load_all_presets(preset_data_path, presets)
 		SelectOptions()
 		UpdateButtonVisuals()
 		if $Default.button_pressed == true:
@@ -49,19 +49,13 @@ func SelectOptions():
 			break
 	if Input.is_action_just_pressed("ui_accept"):
 		preset_options[selected_index].button_pressed = true
+
 func UpdateButtonVisuals():
 	for i in range(preset_options.size()):
 		if i == selected_index:
 			preset_options[i].texture_normal = preset_options[i].texture_hover
 		else:
 			preset_options[i].texture_normal = previous_normal
-
-#Preset Stuff:
-
-func load_all_presets():
-	if FileAccess.file_exists(preset_data_path):
-		var file = FileAccess.open(preset_data_path, FileAccess.READ)
-		presets = file.get_var()
 
 func apply_preset_ui(preset_name: String):
 	if not presets.has(preset_name):

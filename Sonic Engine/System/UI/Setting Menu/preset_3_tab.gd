@@ -7,7 +7,7 @@ var presets := {
 	"preset3": {}
 }
 func _ready() -> void:
-	load_all_presets()
+	presets = System.load_all_presets(save_path, presets)
 	apply_preset_ui("preset1")
 	apply_preset_ui("preset2")
 	apply_preset_ui("preset3")
@@ -17,19 +17,19 @@ func _process(delta: float) -> void:
 		read_preset_from_ui("preset1")
 		read_preset_from_ui("preset2")
 		read_preset_from_ui("preset3")
-		save_all_presets()
+		System.save_all_presets(save_path, presets)
 
 # SAVE & LOAD
 
-func save_all_presets():
-	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	file.store_var(presets)
-func load_all_presets():
-	if FileAccess.file_exists(save_path):
-		var file = FileAccess.open(save_path, FileAccess.READ)
-		presets = file.get_var()
-	else:
-		save_all_presets() # create file if missing
+#func save_all_presets():
+	#var file = FileAccess.open(save_path, FileAccess.WRITE)
+	#file.store_var(presets)
+#func load_all_presets():
+	#if FileAccess.file_exists(save_path):
+		#var file = FileAccess.open(save_path, FileAccess.READ)
+		#presets = file.get_var()
+	#else:
+		#save_all_presets() # create file if missing
 
 # UI -> DATA
 
